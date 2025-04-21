@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study in the USA with GlobalEdu Connect - Explore top universities, programs, and scholarships.">
+  <meta name="keywords" content="study in USA, American universities, international education, scholarships">
+  <meta name="author" content="GlobalEdu Connect">
+  <title>Study in the USA - GlobalEdu Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      background: #f9fafb;
+    }
+    body.dark {
+      background: #111827;
+      color: #e5e7eb;
+    }
+    .btn-cta {
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      background: linear-gradient(45deg, #1e40af, #ffd700);
+      border: none;
+    }
+    .btn-cta:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(45deg, #ffd700, #1e40af);
+    }
+    .card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+      perspective: 1000px;
+      background: #1f2937;
+      color: white;
+      border-radius: 10px;
+      width: 300px;
+      height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .card .logo {
+      position: absolute;
+      top: 90px;
+      left: 20px;
+      background: white;
+      padding: 5px;
+      border-radius: 5px;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .card p {
+      font-size: 0.875rem;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .card .apply-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #ff4d4d;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: background 0.3s ease;
+    }
+    .card .apply-btn:hover {
+      background: #e60000;
+    }
+    .university-box {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .university-box a {
+      transition: color 0.3s ease;
+    }
+    .university-box a:hover {
+      color: #ffd700;
+    }
+    .country-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .country-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .country-card img {
+      transition: transform 0.4s ease;
+    }
+    .country-card:hover img {
+      transform: scale(1.1);
+    }
+    .country-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .country-card:hover .overlay {
+      opacity: 1;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f3f4f6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #1e40af, #ffd700);
+      border-radius: 5px;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #1f2937;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-poppins">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="index.html" class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
+      <div class="flex items-center space-x-6">
+        <a href="index.html#home" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
+        <div class="relative dropdown">
+          <a href="index.html#destinations" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destination Country</a>
+          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
+            <a href="uk.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UK</a>
+            <a href="canada.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Canada</a>
+            <a href="australia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Australia</a>
+            <a href="germany.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Germany</a>
+            <a href="italy.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Italy</a>
+            <a href="usa.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in USA</a>
+            <a href="uae.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UAE</a>
+            <a href="malaysia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Malaysia</a>
+            <a href="newzealand.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in New Zealand</a>
+          </div>
+        </div>
+        <a href="index.html#services" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
+        <a href="index.html#blogs" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blogs</a>
+        <a href="index.html#contact" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
+        <button id="darkModeToggle" class="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9" alt="USA Background" class="w-full h-full object-cover filter brightness-75">
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+    </div>
+    <div class="relative container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-extrabold mb-6 font-montserrat text-white">USA</h1>
+      <p class="text-xl mb-8 max-w-3xl mx-auto text-white">
+        The USA offers world-class education, diverse opportunities, and top universities that attract students globally. Study in the USA for a transformative experience.
+      </p>
+    </div

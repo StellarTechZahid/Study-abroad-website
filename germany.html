@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study in Germany with GlobalEdu Connect - Explore top universities, programs, and scholarships.">
+  <meta name="keywords" content="study in Germany, German universities, international education, scholarships">
+  <meta name="author" content="GlobalEdu Connect">
+  <title>Study in Germany - GlobalEdu Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      background: #f9fafb;
+    }
+    body.dark {
+      background: #111827;
+      color: #e5e7eb;
+    }
+    .btn-cta {
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      background: linear-gradient(45deg, #1e40af, #ffd700);
+      border: none;
+    }
+    .btn-cta:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(45deg, #ffd700, #1e40af);
+    }
+    .card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+      perspective: 1000px;
+      background: #1f2937;
+      color: white;
+      border-radius: 10px;
+      width: 300px;
+      height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .card .logo {
+      position: absolute;
+      top: 90px;
+      left: 20px;
+      background: white;
+      padding: 5px;
+      border-radius: 5px;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .card p {
+      font-size: 0.875rem;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .card .apply-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #ff4d4d;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: background 0.3s ease;
+    }
+    .card .apply-btn:hover {
+      background: #e60000;
+    }
+    .university-box {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .university-box a {
+      transition: color 0.3s ease;
+    }
+    .university-box a:hover {
+      color: #ffd700;
+    }
+    .country-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .country-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .country-card img {
+      transition: transform 0.4s ease;
+    }
+    .country-card:hover img {
+      transform: scale(1.1);
+    }
+    .country-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .country-card:hover .overlay {
+      opacity: 1;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f3f4f6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #1e40af, #ffd700);
+      border-radius: 5px;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #1f2937;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu {
+      display: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-poppins">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="index.html" class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
+      <div class="flex items-center space-x-6">
+        <a href="index.html#home" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
+        <div class="relative dropdown">
+          <a href="index.html#destinations" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destination Country</a>
+          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
+            <a href="uk.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UK</a>
+            <a href="canada.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Canada</a>
+            <a href="australia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Australia</a>
+            <a href="germany.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Germany</a>
+            <a href="italy.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Italy</a>
+            <a href="usa.html" class="block px-4 py-2 text-gray-7-200 hover:bg-gold-500 hover:text-white">Study in USA</a>
+            <a href="uae.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UAE</a>
+            <a href="malaysia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Malaysia</a>
+            <a href="newzealand.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in New Zealand</a>
+          </div>
+        </div>
+        <a href="index.html#services" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
+        <a href="index.html#blogs" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blogs</a>
+        <a href="index.html#contact" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
+        <button id="darkModeToggle" class="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1596432418521-02e7beed3479" alt="Germany Background" class="w-full h-full object-cover filter brightness-75">
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+    </div>
+    <div class="relative container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-extrabold mb-6 font-montserrat text-white">Germany</h1>
+      <p class="text-xl mb-8 max-w-3xl mx-auto text-white">
+        Germany offers world-class education, affordable tuition, and top universities that attract students globally. Study in Germany for a transformative experience.
+      </p>
+    </div>
+  </section>
+
+  <!-- Universities Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 text-center font-montserrat">Universities in Germany</h2>
+      <!-- University List in a Box -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-semibold mb-4">Universities on this page</h3>
+        <div class="university-box space-y-2">
+          <a href="#tum" class="block text-red-500 hover:text-gold-500">Technical University of Munich</a>
+          <a href="#heidelberg" class="block text-red-500 hover:text-gold-500">Heidelberg University</a>
+          <a href="#humboldt" class="block text-red-500 hover:text-gold-500">Humboldt University of Berlin</a>
+          <a href="#freie" class="block text-red-500 hover:text-gold-500">Freie Universität Berlin</a>
+          <a href="#rwth" class="block text-red-500 hover:text-gold-500">RWTH Aachen University</a>
+          <a href="#lmu" class="block text-red-500 hover:text-gold-500">Ludwig Maximilian University of Munich</a>
+          <a href="#tu-dresden" class="block text-red-500 hover:text-gold-500">TU Dresden</a>
+          <a href="#uni-hamburg" class="block text-red-500 hover:text-gold-500">University of Hamburg</a>
+          <a href="#uni-cologne" class="block text-red-500 hover:text-gold-500">University of Cologne</a>
+          <a href="#uni-freiburg" class="block text-red-500 hover:text-gold-500">University of Freiburg</a>
+        </div>
+      </div>
+      <!-- University Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+        <div id="tum" class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Technical University of Munich">
+          <img src="https://via.placeholder.com/60?text=TUM" alt="TUM Logo" class="logo">
+          <div class="p-4">
+            <h3>Technical University of Munich</h3>
+            <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Top 50</p>
+            <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: €0 - €150/semester</p>
+            <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5</p>
+            <p><i class="fas fa-users text-orange-500"></i> Intakes: October & April</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="apply-btn">Apply</a>
+          </div>
+        </div>
+        <div id="heidelberg" class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Heidelberg University">
+          <img src="https://via.placeholder.com/60?text=Heidelberg" alt="Heidelberg Logo" class="logo">
+          <div class="p-4">
+            <h3>Heidelberg University</h3>
+            <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Top 70</p>
+            <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: €0 - €150/semester</p>
+            <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5</p>
+            <p><i class="fas fa-users text-orange-500"></i> Intakes: October & April</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="apply-btn">Apply</a>
+          </div>
+        </div>
+        <div id="humboldt" class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Humboldt University of Berlin">
+          <img src="https://via.placeholder.com/60?text=Humboldt" alt="Humboldt Logo" class="logo">
+          <div class="p-4">
+            <h3>Humboldt University of Berlin</h3>
+            <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Top 80</p>
+            <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: €0 - €150/semester</p>
+            <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5</p>
+            <p><i class="fas fa-users text-orange-500"></i> Intakes: October & April</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="apply-btn">Apply</a>
+          </div>
+        </div>
+        <div id="freie" class="card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Freie Universität Berlin">
+          <img src="https://via.placeholder.com/60?text=Freie" alt="Freie Logo" class="logo">
+          <div class="p-4">
+            <h3>Freie Universität Berlin</h3>
+            <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Top 90</p>
+            <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: €0 - €150/semester</p>
+            <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5</p>
+            <p><i class="fas fa-users text-orange-500"></i> Intakes: October & April</p>
+            <a href="https://wa.me/1234567890" target="_blank" class="apply-btn">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Information Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 font-montserrat">Why Study in Germany?</h2>
+      <h3 class="text-2xl font-semibold mb-4">Why Study in Germany</h3>
+      <p class="mb-4">
+        A German degree gives you more than an academic experience which helps you in your real-world experiences. Wherever you go in the world, a German education opens the door of your career and practical life ahead.
+      </p>
+      <ul class="list-disc list-inside space-y-2 mb-4">
+        <li><strong>Ranked universities:</strong> In Germany, you can find a number of internationally ranked universities. It has a high number of ranked institutes such as Technical University of Munich, Heidelberg University, and Humboldt University of Berlin. Many top universities are based in Germany.</li>
+        <li><strong>Education quality:</strong> The standard of education in Germany has always been a center point attraction for international students. German universities take a more practical approach rather than lecture-based learning for international students. Students are expected to take a proactive role and apply the skills in real-world scenarios. This allows deep understanding of your course which eventually benefits you in the long term.</li>
+        <li><strong>Multicultural and secure:</strong> For international students, the diversity is reflected in every aspect of German culture, which has ranked as a top multicultural and secure country for international students. The diversity is reflected in every aspect of German culture, food, literature, arts, and music.</li>
+        <li><strong>Language options:</strong> While German is the primary language, many programs are offered in English, especially at the postgraduate level, making it accessible for international students. Learning German can also enhance your experience.</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold mb-4">Average Tuition Fees in Germany for International Students</h3>
+      <p class="mb-4">
+        Most public universities in Germany do not charge tuition fees for international students, except for a small semester fee. The average semester fee in Germany varies from €150 - €300. Private universities may charge tuition fees ranging from €10,000 - €20,000 per year.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4">Working Hours Allowed in Germany (Student Visa)</h3>
+      <p class="mb-4">
+        As per German regulations, as an international student you are allowed to work 120 full days or 240 half days per year. Working more than the allowed hours can strictly affect your visa status, resulting in cancellation of your study permit.
+      </p>
+      <p class="mb-4">
+        Average wage rates in Germany for international students are €10-€15/hour.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4">Living Cost in Germany for International Students</h3>
+      <p class="mb-4">
+        The average living cost for an international student in Germany depends on the city you are living in; the living cost in Munich or Berlin is higher compared to smaller cities.
+      </p>
+      <ul class="list-disc list-inside space-y-2 mb-4">
+        <li>€850 per month for living in major cities like Munich or Berlin</li>
+        <li>€650 per month for living in smaller cities</li>
+      </ul>
+      <p class="mb-4">
+        If you have a student loan or a government sponsorship, you will need to submit the evidence while submitting your visa application.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4">How to Apply for a German University?</h3>
+      <p class="mb-4">
+        Nearly all German universities have their official representatives in each country. You can always contact their authorized agents for better and sound consultants like us. Pakistan Education Park is an official representative of German universities for Pakistani students as their German student visa consultants, assisting Pakistani students in navigating the visa process smoothly and studying in Germany.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 mb-4">
+        <li>Visit with us your complete academic & financial documents for better assessment.</li>
+        <li>Complete the application process by applying to the universities of your choice.</li>
+        <li>Get registered with us and send your documents to universities.</li>
+        <li>Apply to any 3-4 German universities and you will get your offer letter within 3-4 working days.</li>
+      </ol>
+      <p class="mb-4">
+        ABN Overseas Education Pvt is proud to be one of the top German university consultants in Pakistan, providing expert guidance and support for Pakistani students aiming to study in Germany. ABN Overseas Education Pvt stories are fast turnaround time and each step of your admission process are as directly engaged with our official partners in Germany. Our success stories are spread worldwide and we are rated best student visa consultants in Pakistan.
+      </p>
+      <p class="mb-4">
+        Study in Germany for a chance to stand in the increasingly competitive job market. Undertake a workplace placement as part of your degree at the world-renowned institutions and get academic distinction along with the potential for real-world challenges at the ABN Overseas Education Pvt. We help students with the process of getting into the top universities in Germany, we guide the registrants with the flexibility of scholarship programs, practical information and insights on German education for international students and comprehensive details of the application process.
+      </p>
+      <p class="mb-4">
+        Fast track your application process with us and study in your dream university in Germany.
+      </p>
+    </div>
+  </section>
+
+  <!-- Study Destinations Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 text-center font-montserrat">Study Destinations</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <a href="uk.html" class="country-card rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1503919827949-2fd00c83d5a7" alt="UK" class="w-full h-48 object-cover">
+          <div class="overlay">
+            <span class="text-white text-xl font-semibold">UK</span>
+          </div>
+        </a>
+        <a href="canada.html" class="country-card rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517511620798-cec34d4285fe" alt="Canada" class="w-full h-48 object-cover">
+          <div class="overlay">
+            <span class="text-white text-xl font-semibold">Canada</span>
+          </div>
+        </a>
+        <a href="australia.html" class="country-card rounded-lg overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9" alt="Australia" class="w-full h-48 object-cover">
+          <div class="overlay">
+            <span class="text-white text-xl font-semibold">Australia</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-4 font-montserrat">GlobalEdu Connect</h3>
+          <p class="text-lg">Your trusted partner for international education, connecting students and universities worldwide.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#home" class="text-gray-400 hover:text-gold-400">Home</a></li>
+            <li><a href="index.html#destinations" class="text-gray-400 hover:text-gold-400">Destinations</a></li>
+            <li><a href="index.html#services" class="text-gray-400 hover:text-gold-400">Services</a></li>
+            <li><a href="index.html#blogs" class="text-gray-400 hover:text-gold-400">Blogs</a></li>
+            <li><a href="index.html#contact" class="text-gray-400 hover:text-gold-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-gold-400">Scholarship Guide</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-gold-400">Visa Checklist</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-gold-400">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-gold-400">FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Stay Connected</h4>
+          <div class="flex gap-4 mb-4">
+            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
+          </div>
+          <div class="mt-4">
+            <div class="relative">
+              <input id="newsletterEmail" type="email" placeholder="Subscribe to our newsletter" class="form-input p-3 rounded-l-lg border-none dark:bg-gray-800 dark:text-white focus:ring-4 focus:ring-gold-400 w-full" aria-label="Newsletter email">
+              <i class="fas fa-envelope absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+            <button id="newsletterSubmit" class="mt-2 bg-gradient-to-r from-blue-800 to-gold-500 text-white p-3 rounded-lg btn-cta w-full">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-sm mt-12">© 2025 GlobalEdu Connect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.card, .country-card').forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: 'power3.out'
+      });
+    });
+
+    // Newsletter Subscription
+    const newsletterSubmit = document.getElementById('newsletterSubmit');
+    newsletterSubmit.addEventListener('click', async () => {
+      const email = document.getElementById('newsletterEmail').value;
+      if (!email) {
+        showNotification('Please enter your email.');
+        return;
+      }
+      showNotification('Subscribed successfully!');
+    });
+
+    // Notification Function
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'fixed bottom-10 right-10 bg-gradient-to-r from-blue-800 to-gold-500 text-white p-4 rounded-lg shadow-lg';
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      gsap.fromTo(notification, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
+      setTimeout(() => {
+        gsap.to(notification, { opacity: 0, y: 20, duration: 0.5, onComplete: () => notification.remove() });
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
