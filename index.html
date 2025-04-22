@@ -9,7 +9,7 @@
   <title>GlobalEdu Connect - Study Abroad Simplified</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" onerror="console.error('Failed to load Font Awesome')">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Montserrat:wght@400;700;900.display=swap" rel="stylesheet">
   <style>
     body {
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -20,6 +20,7 @@
       background: #111827;
       color: #e5e7eb;
     }
+    /* Hero Section Background */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -44,6 +45,7 @@
       z-index: 1;
       text-align: center;
     }
+    /* Button Styling */
     .btn-cta {
       transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
       background: linear-gradient(45deg, #1e40af, #ffd700);
@@ -54,6 +56,7 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
       background: linear-gradient(45deg, #ffd700, #1e40af);
     }
+    /* Fade-In Animation */
     .fade-in {
       animation: fadeIn 1.5s ease-in;
     }
@@ -61,6 +64,7 @@
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+    /* Dropdown Styling */
     .dropdown {
       position: relative;
     }
@@ -79,21 +83,14 @@
       top: 100%;
       left: 0;
       z-index: 50;
-      min-width: 200px; /* Ensure dropdown has enough width */
-      padding-top: 0.5rem; /* Add a small padding to avoid hover gap */
+      min-width: 200px;
+      padding-top: 0.5rem;
     }
-    .dropdown:hover .dropdown-menu,
-    .dropdown-menu:hover {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* Ensure no gap between navbar item and dropdown menu */
     .dropdown > a {
       display: inline-block;
-      padding-bottom: 0.5rem; /* Add padding to ensure smooth hover transition */
+      padding-bottom: 0.5rem;
     }
-    .destination-card,
+    /* Card Styling for About, Services, etc. */
     .about-card,
     .service-card,
     .testimonial-card,
@@ -105,8 +102,8 @@
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
     }
-    .destination-card:hover,
     .about-card:hover,
     .service-card:hover,
     .testimonial-card:hover,
@@ -114,13 +111,92 @@
       transform: scale(1.05);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
-    .destination-card.dark,
     .about-card.dark,
     .service-card.dark,
     .testimonial-card.dark,
     .blog-card.dark {
       background: linear-gradient(135deg, rgba(55, 65, 81, 0.9), rgba(31, 41, 55, 0.7));
     }
+    /* Updated Destination Card Styling */
+    .destination-card {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #1a1a1a;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .destination-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    .destination-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+    .destination-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 2;
+    }
+    .destination-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+    }
+    .destination-image-wrapper:hover .destination-overlay {
+      opacity: 1;
+    }
+    .destination-overlay-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+    }
+    .destination-content {
+      padding: 1rem;
+      position: relative;
+      z-index: 3;
+    }
+    .destination-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .destination-description {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #d1d5db;
+    }
+    .destination-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #26a69a;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .destination-button:hover {
+      color: #4db6ac;
+    }
+    .destination-button i {
+      font-size: 1rem;
+    }
+    /* About Card Styling */
     .about-card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 215, 0, 0.1));
     }
@@ -133,11 +209,13 @@
     .about-card:hover img {
       transform: scale(1.1);
     }
+    /* Feature Icon Styling */
     .feature-icon {
       font-size: 2rem;
       color: #1e40af;
       margin-bottom: 1rem;
     }
+    /* Marquee Styling */
     .marquee {
       display: flex;
       overflow: hidden;
@@ -164,6 +242,7 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    /* Counter Styling */
     .counter {
       font-size: 2.5rem;
       font-weight: bold;
@@ -177,685 +256,829 @@
     .animate-counter.visible {
       opacity: 1;
     }
+    /* Error Message Styling */
+    .error-message {
+      color: red;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    /* Section Backgrounds */
+    #start-journey {
+      background: url('https://images.unsplash.com/photo-1516321318805-268a0a5a81d3') no-repeat center center/cover;
+    }
+    #start-journey::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(243, 244, 246, 0.9);
+    }
+    #start-journey.dark::before {
+      background: rgba(31, 41, 55, 0.9);
+    }
+    #destinations {
+      background: #1a1a1a;
+    }
+    #about-us {
+      background: url('https://images.unsplash.com/photo-1516321497487-e288fb1979f2') no-repeat center center/cover;
+    }
+    #about-us::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(249, 250, 251, 0.9);
+    }
+    #about-us.dark::before {
+      background: rgba(17, 24, 39, 0.9);
+    }
+    #services {
+      background: url('https://images.unsplash.com/photo-1516321497487-e288fb1979f2') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+    #services::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(243, 244, 246, 0.9);
+    }
+    #services.dark::before {
+      background: rgba(31, 41, 55, 0.9);
+    }
+    #partner-universities {
+      background: url('https://images.unsplash.com/photo-1505533321630-975218a5f66f') no-repeat center center/cover;
+    }
+    #partner-universities::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    #partner-universities.dark::before {
+      background: rgba(17, 24, 39, 0.9);
+    }
+    #impact {
+      background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+    #impact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    #impact.dark::before {
+      background: rgba(17, 24, 39, 0.9);
+    }
+    #testimonials {
+      background: url('https://images.unsplash.com/photo-1517816428104-797678c27596') no-repeat center center/cover;
+    }
+    #testimonials::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(229, 231, 235, 0.9);
+    }
+    #testimonials.dark::before {
+      background: rgba(31, 41, 55, 0.9);
+    }
+    #latest-blogs {
+      background: url('https://images.unsplash.com/photo-1511285560929-80b4564e6bfb') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+    #latest-blogs::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(243, 244, 246, 0.9);
+    }
+    #latest-blogs.dark::before {
+      background: rgba(31, 41, 55, 0.9);
+    }
+    #register {
+      background: url('https://images.unsplash.com/photo-1552664730-d307ca884978') no-repeat center center/cover;
+    }
+    #register::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(229, 231, 235, 0.9);
+    }
+    #register.dark::before {
+      background: rgba(31, 41, 55, 0.9);
+    }
   </style>
 </head>
 <body class="font-poppins">
-  <nav class="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
-    <div class="container mx-auto flex justify-between items-center px-4">
-      <a href="index.html" class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
-      <div class="flex items-center space-x-6">
-        <a href="#home" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
-        <div class="dropdown">
-          <a href="#destinations" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destinations</a>
-          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
-            <a href="/uk.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UK</a>
-            <a href="/usa.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in USA</a>
-            <a href="/australia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Australia</a>
-            <a href="/canada.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Canada</a>
-            <a href="/germany.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Germany</a>
-            <a href="/italy.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Italy</a>
-            <a href="/uae.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UAE</a>
-            <a href="/malaysia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Malaysia</a>
-            <a href="/new-zealand.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in New Zealand</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#services" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
-          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
-            <a href="/career-counseling.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Career Counseling</a>
-            <a href="/university-selection.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">University Selection</a>
-            <a href="/profile-evaluation.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Profile Evaluation</a>
-            <a href="/test-preparation.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Test Preparation</a>
-            <a href="/application-support.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Application Support</a>
-            <a href="/scholarship-consulting.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Scholarship Consulting</a>
-            <a href="/visa-assistance.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Visa Assistance</a>
-            <a href="/accommodation-support.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Accommodation Support</a>
-            <a href="/pre-departure-orientation.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Pre-Departure Orientation</a>
-            <a href="/post-arrival-support.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Post-Arrival Support</a>
-            <a href="/job-search-guidance.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Job Search Guidance</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#about-us" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">About Us</a>
-          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
-            <a href="who-we-are.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Who We Are</a>
-            <a href="meet-our-team.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Meet Our Team</a>
-            <a href="student-success-stories.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Student Success Stories</a>
-            <a href="our-partner-universities.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Our Partner Universities</a>
-            <a href="accreditations-memberships.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Accreditations & Memberships</a>
-            <a href="careers.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Careers</a>
-            <a href="media-events.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Media & Events</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="blog.html" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blog</a>
-          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
-            <a href="why-study-in-canada.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Why Study in Canada?</a>
-            <a href="top-10-tips-for-international-students.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Top 10 Tips for International Students</a>
-          </div>
-        </div>
-        <a href="#contact" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
-        <button id="theme-toggle" class="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
-        </button>
-      </div>
-    </div>
-  </nav>
+  <div id="root"></div>
 
-  <section id="home" class="hero-section">
-    <div class="hero-content fade-in">
-      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 font-montserrat">Your Global Education Journey Starts Here</h1>
-      <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8">Discover top universities, secure scholarships, and achieve your study abroad dreams with GlobalEdu Connect.</p>
-    </div>
-  </section>
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" crossorigin="anonymous" onerror="console.error('Failed to load React')"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin="anonymous" onerror="console.error('Failed to load ReactDOM')"></script>
+  <!-- Babel for JSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone@7.23.2/babel.min.js" crossorigin="anonymous" onerror="console.error('Failed to load Babel')"></script>
 
-  <section id="start-journey" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Let’s Start Your Journey</h2>
-      <div class="max-w-lg mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
-        <div class="space-y-4">
-          <div>
-            <label for="full-name" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Full Name</label>
-            <input type="text" id="full-name" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Full Name">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
-            <input type="email" id="email" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Email">
-          </div>
-          <div>
-            <label for="desired-country" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Desired Country</label>
-            <select id="desired-country" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600">
-              <option value="UK">UK</option>
-              <option value="USA">USA</option>
-              <option value="Australia">Australia</option>
-              <option value="Canada">Canada</option>
-              <option value="Germany">Germany</option>
-              <option value="Italy">Italy</option>
-              <option value="UAE">UAE</option>
-              <option value="Malaysia">Malaysia</option>
-              <option value="New Zealand">New Zealand</option>
-            </select>
-          </div>
-          <div>
-            <label for="program-type" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Program Type</label>
-            <select id="program-type" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600">
-              <option value="undergraduate">Undergraduate</option>
-              <option value="postgraduate">Postgraduate</option>
-              <option value="phd">PhD</option>
-              <option value="diploma">Diploma</option>
-            </select>
-          </div>
-          <div>
-            <label for="budget" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Budget ($)</label>
-            <input type="number" id="budget" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Budget">
-          </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone Number</label>
-            <input type="tel" id="phone" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Phone Number">
-          </div>
-          <button class="w-full bg-gradient-to-r from-blue-800 to-gold-500 text-white p-3 rounded-lg btn-cta">Request Free Consultation</button>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
 
-  <section id="destinations" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Explore Top Study Destinations</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="destination-card">
-          <img src="https://plus.unsplash.com/premium_photo-1661962726504-fa8f464a1bb8?" alt="Study in UK" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in UK</h3>
-            <a href="/uk.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://i.pinimg.com/736x/30/92/b4/3092b497294d930881c6fcfe6373b7fc.jpg" alt="Study in USA" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in USA</h3>
-            <a href="/usa.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://plus.unsplash.com/premium_photo-1697730221799-f2aa87ab2c5d?" alt="Study in Australia" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in Australia</h3>
-            <a href="/australia.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1519832979-6fa011b87667?" alt="Study in Canada" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in Canada</h3>
-            <a href="/canada.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1552035496-08efc7baf40e?" alt="Study in Germany" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in Germany</h3>
-            <a href="/germany.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?" alt="Study in Italy" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in Italy</h3>
-            <a href="/italy.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="Study in UAE" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in UAE</h3>
-            <a href="/uae.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?" alt="Study in Malaysia" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in Malaysia</h3>
-            <a href="/malaysia.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1534473298238-97b36b30d4a7?" alt="Study in New Zealand" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Study in New Zealand</h3>
-            <a href="/new-zealand.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-12">
-        <a href="https://api.whatsapp.com/send?phone=1234567890&text=Hello%20GlobalEdu%20Connect,%20I%20want%20to%20speak%20with%20you!" target="_blank" class="inline-flex items-center gap-2 text-lg font-semibold text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">
-          <i class="fab fa-whatsapp text-2xl text-green-500"></i>
-          Speak to Us
-        </a>
-      </div>
-    </div>
-  </section>
+    // Error Boundary Component
+    class ErrorBoundary extends React.Component {
+      state = { hasError: false, error: null };
 
-  <section id="about-us" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">About Us</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a href="who-we-are.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Who We Are" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Who We Are</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Learn about our mission to empower students globally.</p>
-          </div>
-        </a>
-        <a href="meet-our-team.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Meet Our Team" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Meet Our Team</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Get to know the experts guiding your journey.</p>
-          </div>
-        </a>
-        <a href="student-success-stories.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1516321318805-268a0a5a81d3" alt="Student Success Stories" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Student Success Stories</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Read inspiring stories from our students.</p>
-          </div>
-        </a>
-        <a href="our-partner-universities.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb1979f2" alt="Our Partner Universities" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Our Partner Universities</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Explore our network of prestigious universities.</p>
-          </div>
-        </a>
-        <a href="accreditations-memberships.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb1979f2" alt="Accreditations & Memberships" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Accreditations & Memberships</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Discover our recognized affiliations.</p>
-          </div>
-        </a>
-        <a href="careers.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb1979f2" alt="Careers" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Careers</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Join our team and make an impact.</p>
-          </div>
-        </a>
-        <a href="media-events.html" class="about-card">
-          <div class="relative overflow-hidden rounded-t-lg">
-            <img src="https://images.unsplash.com/photo-1516321497487-e288fb1979f2" alt="Media & Events" class="w-full h-48 object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-              <h3 class="text-xl font-semibold text-white">Media & Events</h3>
-            </div>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-600 dark:text-gray-300">Stay updated with our latest events and media.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+      static getDerivedStateFromError(error) {
+        return { hasError: true, error };
+      }
 
-  <section id="services" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-chalkboard-teacher feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Career Counseling</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Personalized guidance to plan your academic future.</p>
-            <a href="/career-counseling.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-university feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">University Selection</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Choose the best university for your goals.</p>
-            <a href="/university-selection.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-user-check feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Profile Evaluation</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Enhance your student profile for admissions.</p>
-            <a href="/profile-evaluation.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-book-reader feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Test Preparation</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Prepare for standardized tests with expert support.</p>
-            <a href="/test-preparation.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-file-alt feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Application Support</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Assistance with university applications.</p>
-            <a href="/application-support.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-money-bill-wave feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Scholarship Consulting</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Find and apply for scholarships.</p>
-            <a href="/scholarship-consulting.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-passport feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Visa Assistance</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Support for visa applications and interviews.</p>
-            <a href="/visa-assistance.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-home feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Accommodation Support</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Find the best accommodation options.</p>
-            <a href="/accommodation-support.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-plane-departure feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Pre-Departure Orientation</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Prepare for your journey abroad.</p>
-            <a href="/pre-departure-orientation.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-handshake feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Post-Arrival Support</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Settle in with our support services.</p>
-            <a href="/post-arrival-support.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="p-4 text-center">
-            <i class="fas fa-briefcase feature-icon"></i>
-            <h3 class="text-xl font-semibold mb-2">Job Search Guidance</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Guidance for post-study job opportunities.</p>
-            <a href="/job-search-guidance.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      componentDidCatch(error, errorInfo) {
+        console.error('Error caught by ErrorBoundary:', error, errorInfo);
+      }
 
-  <section id="partner-universities" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Our Partner Universities</h2>
-      <div class="marquee">
-        <div class="marquee-content">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/University_of_Toronto_Logo.svg/1200px-University_of_Toronto_Logo.svg.png" alt="University of Toronto" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/McGill_University_logo.svg/1200px-McGill_University_logo.svg.png" alt="McGill University" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/University_of_British_Columbia_Logo.svg/1200px-University_of_British_Columbia_Logo.svg.png" alt="University of British Columbia" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/University_of_Sydney_logo.svg/1200px-University_of_Sydney_logo.svg.png" alt="University of Sydney" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/University_of_Melbourne_logo.svg/1200px-University_of_Melbourne_logo.svg.png" alt="University of Melbourne" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/University_of_Toronto_Logo.svg/1200px-University_of_Toronto_Logo.svg.png" alt="University of Toronto" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/McGill_University_logo.svg/1200px-McGill_University_logo.svg.png" alt="McGill University" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/University_of_British_Columbia_Logo.svg/1200px-University_of_British_Columbia_Logo.svg.png" alt="University of British Columbia" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/University_of_Sydney_logo.svg/1200px-University_of_Sydney_logo.svg.png" alt="University of Sydney" loading="lazy">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/University_of_Melbourne_logo.svg/1200px-University_of_Melbourne_logo.svg.png" alt="University of Melbourne" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="impact" class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Our Impact</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div>
-          <div class="counter" id="students-enrolled">0+</div>
-          <p class="text-lg font-semibold text-gray-600 dark:text-gray-300">Students Enrolled</p>
-        </div>
-        <div>
-          <div class="counter" id="partner-universities">0+</div>
-          <p class="text-lg font-semibold text-gray-600 dark:text-gray-300">Partner Universities</p>
-        </div>
-        <div>
-          <div class="counter" id="scholarships-awarded">0+</div>
-          <p class="text-lg font-semibold text-gray-600 dark:text-gray-300">Scholarships Awarded</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">What Our Students Say</h2>
-      <div class="marquee">
-        <div class="testimonial-marquee flex space-x-8">
-          <div class="testimonial-card flex-shrink-0 w-80">
-            <div class="p-4">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">University of Toronto - Computer Science</p>
-              <div class="flex items-center mb-4">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Ayesha Khan" class="w-12 h-12 rounded-full mr-4 object-cover">
-                <div>
-                  <h3 class="text-lg font-semibold">Ayesha Khan</h3>
-                </div>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">GlobalEdu Connect helped me secure admission to my dream university in Canada. Their support was incredible!</p>
+      render() {
+        if (this.state.hasError) {
+          return (
+            <div className="error-message">
+              <h1>Something went wrong.</h1>
+              <p>{this.state.error?.message || 'Unknown error'}</p>
+              <p>Please check the console for more details.</p>
             </div>
-          </div>
-          <div class="testimonial-card flex-shrink-0 w-80">
-            <div class="p-4">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">University of Sydney - Mechanical Engineering</p>
-              <div class="flex items-center mb-4">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Rahul Sharma" class="w-12 h-12 rounded-full mr-4 object-cover">
-                <div>
-                  <h3 class="text-lg font-semibold">Rahul Sharma</h3>
-                </div>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">The visa assistance and pre-departure orientation made my transition to Australia seamless. Highly recommend!</p>
-            </div>
-          </div>
-          <div class="testimonial-card flex-shrink-0 w-80">
-            <div class="p-4">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Technical University of Munich - Data Science</p>
-              <div class="flex items-center mb-4">
-                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df" alt="Fatima Ali" class="w-12 h-12 rounded-full mr-4 object-cover">
-                <div>
-                  <h3 class="text-lg font-semibold">Fatima Ali</h3>
-                </div>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Thanks to their scholarship guidance, I saved thousands on my tuition fees in Germany!</p>
-            </div>
-          </div>
-          <div class="testimonial-card flex-shrink-0 w-80">
-            <div class="p-4">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">University of Toronto - Computer Science</p>
-              <div class="flex items-center mb-4">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Ayesha Khan" class="w-12 h-12 rounded-full mr-4 object-cover">
-                <div>
-                  <h3 class="text-lg font-semibold">Ayesha Khan</h3>
-                </div>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">GlobalEdu Connect helped me secure admission to my dream university in Canada. Their support was incredible!</p>
-            </div>
-          </div>
-          <div class="testimonial-card flex-shrink-0 w-80">
-            <div class="p-4">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">University of Sydney - Mechanical Engineering</p>
-              <div class="flex items-center mb-4">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Rahul Sharma" class="w-12 h-12 rounded-full mr-4 object-cover">
-                <div>
-                  <h3 class="text-lg font-semibold">Rahul Sharma</h3>
-                </div>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">The visa assistance and pre-departure orientation made my transition to Australia seamless. Highly recommend!</p>
-            </div>
-          </div>
-          <div class="testimonial-card flex-shrink-0 w-80">
-            <div class="p-4">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Technical University of Munich - Data Science</p>
-              <div class="flex items-center mb-4">
-                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df" alt="Fatima Ali" class="w-12 h-12 rounded-full mr-4 object-cover">
-                <div>
-                  <h3 class="text-lg font-semibold">Fatima Ali</h3>
-                </div>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Thanks to their scholarship guidance, I saved thousands on my tuition fees in Germany!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="latest-blogs" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Latest Blogs</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b4564e6bfb" alt="Why Study in Canada?" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Why Study in Canada?</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">April 15, 2025</p>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Discover the benefits of studying in Canada, from world-class education to vibrant multicultural cities.</p>
-            <a href="why-study-in-canada.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Top 10 Tips for International Students" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Top 10 Tips for International Students</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">April 10, 2025</p>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Essential tips to help international students succeed in their study abroad journey.</p>
-            <a href="top-10-tips-for-international-students.html" class="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="register" class="py-20 bg-gray-100 dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center font-montserrat">Register for a Free Consultation Session</h2>
-      <div class="max-w-lg mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
-        <div class="space-y-4">
-          <div>
-            <label for="reg-full-name" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Full Name</label>
-            <input type="text" id="reg-full-name" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Full Name">
-          </div>
-          <div>
-            <label for="reg-email" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
-            <input type="email" id="reg-email" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Email">
-          </div>
-          <div>
-            <label for="reg-desired-country" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Desired Country</label>
-            <select id="reg-desired-country" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600">
-              <option value="UK">UK</option>
-              <option value="USA">USA</option>
-              <option value="Australia">Australia</option>
-              <option value="Canada">Canada</option>
-              <option value="Germany">Germany</option>
-              <option value="Italy">Italy</option>
-              <option value="UAE">UAE</option>
-              <option value="Malaysia">Malaysia</option>
-              <option value="New Zealand">New Zealand</option>
-            </select>
-          </div>
-          <div>
-            <label for="reg-program-type" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Program Type</label>
-            <select id="reg-program-type" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600">
-              <option value="undergraduate">Undergraduate</option>
-              <option value="postgraduate">Postgraduate</option>
-              <option value="phd">PhD</option>
-              <option value="diploma">Diploma</option>
-            </select>
-          </div>
-          <div>
-            <label for="reg-budget" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Budget ($)</label>
-            <input type="number" id="reg-budget" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Budget">
-          </div>
-          <div>
-            <label for="reg-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone Number</label>
-            <input type="tel" id="reg-phone" class="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600" placeholder="Your Phone Number">
-          </div>
-          <button class="w-full bg-gradient-to-r from-blue-800 to-gold-500 text-white p-3 rounded-lg btn-cta">Request Free Consultation</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="text-2xl font-bold mb-4 font-montserrat">GlobalEdu Connect</h3>
-          <p>Your trusted partner for international education, connecting students and universities worldwide.</p>
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="#home" class="text-gray-400 hover:text-gold-400">Home</a></li>
-            <li><a href="#destinations" class="text-gray-400 hover:text-gold-400">Destinations</a></li>
-            <li><a href="#services" class="text-gray-400 hover:text-gold-400">Services</a></li>
-            <li><a href="#about-us" class="text-gray-400 hover:text-gold-400">About Us</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-gold-400">Blog</a></li>
-            <li><a href="#contact" class="text-gray-400 hover:text-gold-400">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold mb-4">Resources</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-gold-400">Scholarship Guide</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-gold-400">Visa Checklist</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-gold-400">Blog</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-gold-400">FAQs</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-semibold mb-4">Stay Connected</h4>
-          <div class="flex gap-4 mb-4">
-            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
-            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-2xl"></i></a>
-            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
-            <a href="#" class="text-gray-400 hover:text-gold-400" aria-label="Twitter"><i class="fab fa-twitter text-2xl"></i></a>
-          </div>
-        </div>
-      </div>
-      <p class="text-center text-sm mt-8">© 2025 GlobalEdu Connect. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-      body.classList.add('dark');
-    }
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      const newTheme = body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', newTheme);
-    });
-
-    // Counter Animation
-    const animateCounter = (element, target, duration) => {
-      let start = 0;
-      const step = target / (duration / 10);
-      const interval = setInterval(() => {
-        start += step;
-        if (start >= target) {
-          start = target;
-          clearInterval(interval);
+          );
         }
-        element.textContent = Math.floor(start) + '+';
-      }, 10);
+        return this.props.children;
+      }
+    }
+
+    // Navbar Component with Logo
+    const Navbar = () => {
+      return (
+        <nav className="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+          <div className="container mx-auto flex justify-between items-center px-4">
+            <a href="/" className="flex items-center space-x-2">
+              <svg className="w-10 h-10 text-blue-800 dark:text-gold-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4-4z"/>
+              </svg>
+              <span className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">
+                GlobalEdu Connect
+              </span>
+            </a>
+            <div className="flex items-center space-x-6">
+              <a href="/" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
+              <div className="dropdown">
+                <a href="/destinations.html" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destinations</a>
+                <div className="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
+                  <a href="/uk.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UK</a>
+                  <a href="/usa.html" className="block px-4 py-2 text-gray-707 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in USA</a>
+                  <a href="/australia.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Australia</a>
+                  <a href="/canada.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Canada</a>
+                  <a href="/germany.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Germany</a>
+                  <a href="/italy.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Italy</a>
+                  <a href="/uae.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UAE</a>
+                  <a href="/malaysia.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Malaysia</a>
+                  <a href="/new-zealand.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in New Zealand</a>
+                </div>
+              </div>
+              <div className="dropdown">
+                <a href="/services.html" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
+                <div className="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
+                  <a href="/career-counseling.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Career Counseling</a>
+                  <a href="/university-selection.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">University Selection</a>
+                  <a href="/profile-evaluation.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Profile Evaluation</a>
+                  <a href="/test-preparation.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Test Preparation</a>
+                  <a href="/application-support.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Application Support</a>
+                  <a href="/scholarship-consulting.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Scholarship Consulting</a>
+                  <a href="/visa-assistance.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Visa Assistance</a>
+                  <a href="/accommodation-support.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Accommodation Support</a>
+                  <a href="/pre-departure-orientation.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Pre-Departure Orientation</a>
+                  <a href="/post-arrival-support.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Post-Arrival Support</a>
+                  <a href="/job-search-guidance.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Job Search Guidance</a>
+                </div>
+              </div>
+              <div className="dropdown">
+                <a href="/about-us.html" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">About Us</a>
+                <div className="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
+                  <a href="/who-we-are.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Who We Are</a>
+                  <a href="/meet-our-team.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Meet Our Team</a>
+                  <a href="/student-success-stories.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Student Success Stories</a>
+                  <a href="/our-partner-universities.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Our Partner Universities</a>
+                  <a href="/accreditations-memberships.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Accreditations & Memberships</a>
+                  <a href="/careers.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Careers</a>
+                  <a href="/media-events.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Media & Events</a>
+                </div>
+              </div>
+              <div className="dropdown">
+                <a href="/blog.html" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blog</a>
+                <div className="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
+                  <a href="/why-study-in-canada.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Why Study in Canada?</a>
+                  <a href="/top-10-tips-for-international-students.html" className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Top 10 Tips for International Students</a>
+                </div>
+              </div>
+              <a href="/contact.html" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
+              <button onClick={() => toggleTheme()} className="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+      );
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const studentsEnrolled = document.getElementById('students-enrolled');
-          const partnerUniversities = document.getElementById('partner-universities');
-          const scholarshipsAwarded = document.getElementById('scholarships-awarded');
-          animateCounter(studentsEnrolled, 5000, 2000);
-          animateCounter(partnerUniversities, 100, 2000);
-          animateCounter(scholarshipsAwarded, 1000, 2000);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
+    // Hero Section Component
+    const HeroSection = () => {
+      return (
+        <section id="home" className="hero-section">
+          <div className="hero-content fade-in">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-4 font-montserrat">Your Global Education Journey Starts Here</h1>
+            <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8">Discover top universities, secure scholarships, and achieve your study abroad dreams with GlobalEdu Connect.</p>
+          </div>
+        </section>
+      );
+    };
 
-    const impactSection = document.getElementById('impact');
-    if (impactSection) {
-      observer.observe(impactSection);
-    } else {
-      console.error('Impact section not found.');
+    // Start Journey Component
+    const StartJourney = () => {
+      return (
+        <section id="start-journey" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Let’s Start Your Journey</h2>
+            <div className="max-w-lg mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="full-name" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Full Name</label>
+                  <input type="text" id="full-name" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Full Name" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
+                  <input type="email" id="email" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Email" />
+                </div>
+                <div>
+                  <label htmlFor="desired-country" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Desired Country</label>
+                  <select id="desired-country" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500">
+                    <option value="UK">UK</option>
+                    <option value="USA">USA</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Italy">Italy</option>
+                    <option value="UAE">UAE</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="New Zealand">New Zealand</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="program-type" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Program Type</label>
+                  <select id="program-type" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500">
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                    <option value="phd">PhD</option>
+                    <option value="diploma">Diploma</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Budget ($)</label>
+                  <input type="number" id="budget" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Budget" />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone Number</label>
+                  <input type="tel" id="phone" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Phone Number" />
+                </div>
+                <button className="w-full bg-gradient-to-r from-blue-800 to-gold-500 text-white p-3 rounded-lg btn-cta focus:ring-4 focus:ring-gold-400">Request Free Consultation</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Updated Destinations Component
+    const Destinations = () => {
+      const destinations = [
+        { 
+          name: "United Kingdom", 
+          shortName: "UK", 
+          link: "/uk.html", 
+          img: "https://images.unsplash.com/photo-1505761671935-7f94a1a75228", 
+          desc: "The United Kingdom remains a premier destination for international students, hosting over 500,000+ students. Renowned for dynamic courses and integrated learning systems, the UK offers a rich educational experience."
+        },
+        { 
+          name: "United States", 
+          shortName: "USA", 
+          link: "/usa.html", 
+          img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62d9e9", 
+          desc: "The United States is known for its world-renowned universities, top-ranking institutions like MIT and diverse culture. The country’s 4000 accredited centers, including Ivy League and Harvard, make it a prime choice."
+        },
+        { 
+          name: "Australia", 
+          shortName: "Australia", 
+          link: "/australia.html", 
+          img: "https://images.unsplash.com/photo-1506973035872-a4ec6b683c98", 
+          desc: "Australia, ranked as the 12th happiest country in the world (Prosperity Index), has 37 top universities and out of those 32, six of them are in the prestigious top 100. This adds to its popularity as a favored study-abroad destination."
+        },
+        { 
+          name: "Canada", 
+          shortName: "Canada", 
+          link: "/canada.html", 
+          img: "https://images.unsplash.com/photo-1511285560929-80b4564e6bfb", 
+          desc: "Canada is another top choice for global students, offers excellent education, high standard living, and working opportunities. Notably, three Canadian cities—Toronto, Vancouver, and Montreal—feature in the top 20 Best Student Cities rankings by QS."
+        },
+        { 
+          name: "European Union", 
+          shortName: "EU", 
+          link: "/germany.html", 
+          img: "https://images.unsplash.com/photo-1516108317508-678dfdfaf3e0", 
+          desc: "The European Union is another great option for students looking to study abroad. With its easy mobility within EU countries, students can gain valuable international experience and diverse cultural exposure."
+        },
+      ];
+
+      return (
+        <section id="destinations" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat text-white">Study Abroad Consultants</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {destinations.map((dest, index) => (
+                <div key={index} className="destination-card">
+                  <div className="destination-image-wrapper">
+                    <img src={dest.img} alt={dest.name} className="destination-image" loading="lazy" />
+                    <div className="destination-overlay">
+                      <span className="destination-overlay-text">{dest.shortName}</span>
+                    </div>
+                  </div>
+                  <div className="destination-content">
+                    <h3 className="destination-title">{dest.name}</h3>
+                    <p className="destination-description">{dest.desc}</p>
+                    <a href={dest.link} className="destination-button">
+                      Learn More
+                      <i className="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <a href="https://api.whatsapp.com/send?phone=1234567890&text=Hello%20GlobalEdu%20Connect,%20I%20want%20to%20speak%20with%20you!" target="_blank" className="inline-flex items-center gap-2 text-lg font-semibold text-white hover:text-blue-400">
+                <i className="fab fa-whatsapp text-2xl text-green-500"></i>
+                Speak to Us
+              </a>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // About Us Component
+    const AboutUs = () => {
+      const aboutItems = [
+        { title: "Who We Are", link: "/who-we-are.html", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644", desc: "Learn about our mission to empower students globally." },
+        { title: "Meet Our Team", link: "/meet-our-team.html", img: "https://images.unsplash.com/photo-1552664730-d307ca884978", desc: "Get to know the experts guiding your journey." },
+        { title: "Student Success Stories", link: "/student-success-stories.html", img: "https://images.unsplash.com/photo-1516321318805-268a0a5a81d3", desc: "Read inspiring stories from our students." },
+        { title: "Our Partner Universities", link: "/our-partner-universities.html", img: "https://images.unsplash.com/photo-1516321497487-e288fb1979f2", desc: "Explore our network of prestigious universities." },
+        { title: "Accreditations & Memberships", link: "/accreditations-memberships.html", img: "https://images.unsplash.com/photo-1516321497487-e288fb1979f2", desc: "Discover our recognized affiliations." },
+        { title: "Careers", link: "/careers.html", img: "https://images.unsplash.com/photo-1516321497487-e288fb1979f2", desc: "Join our team and make an impact." },
+        { title: "Media & Events", link: "/media-events.html", img: "https://images.unsplash.com/photo-1516321497487-e288fb1979f2", desc: "Stay updated with our latest events and media." },
+      ];
+
+      return (
+        <section id="about-us" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">About Us</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {aboutItems.map((item, index) => (
+                <a key={index} href={item.link} className="about-card">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img src={item.img} alt={item.title} className="w-full h-48 object-cover" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                      <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Services Component
+    const Services = () => {
+      const services = [
+        { title: "Career Counseling", link: "/career-counseling.html", icon: "fas fa-chalkboard-teacher", desc: "Personalized guidance to plan your academic future." },
+        { title: "University Selection", link: "/university-selection.html", icon: "fas fa-university", desc: "Choose the best university for your goals." },
+        { title: "Profile Evaluation", link: "/profile-evaluation.html", icon: "fas fa-user-check", desc: "Enhance your student profile for admissions." },
+        { title: "Test Preparation", link: "/test-preparation.html", icon: "fas fa-book-reader", desc: "Prepare for standardized tests with expert support." },
+        { title: "Application Support", link: "/application-support.html", icon: "fas fa-file-alt", desc: "Assistance with university applications." },
+        { title: "Scholarship Consulting", link: "/scholarship-consulting.html", icon: "fas fa-money-bill-wave", desc: "Find and apply for scholarships." },
+        { title: "Visa Assistance", link: "/visa-assistance.html", icon: "fas fa-passport", desc: "Support for visa applications and interviews." },
+        { title: "Accommodation Support", link: "/accommodation-support.html", icon: "fas fa-home", desc: "Find the best accommodation options." },
+        { title: "Pre-Departure Orientation", link: "/pre-departure-orientation.html", icon: "fas fa-plane-departure", desc: "Prepare for your journey abroad." },
+        { title: "Post-Arrival Support", link: "/post-arrival-support.html", icon: "fas fa-handshake", desc: "Settle in with our support services." },
+        { title: "Job Search Guidance", link: "/job-search-guidance.html", icon: "fas fa-briefcase", desc: "Guidance for post-study job opportunities." },
+      ];
+
+      return (
+        <section id="services" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <div key={index} className="service-card">
+                  <div className="p-4 text-center">
+                    <i className={`${service.icon} feature-icon`}></i>
+                    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{service.desc}</p>
+                    <a href={service.link} className="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Partner Universities Component
+    const PartnerUniversities = () => {
+      const universities = [
+        { name: "University of Toronto", img: "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/University_of_Toronto_Logo.svg/1200px-University_of_Toronto_Logo.svg.png" },
+        { name: "McGill University", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/McGill_University_logo.svg/1200px-McGill_University_logo.svg.png" },
+        { name: "University of British Columbia", img: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/University_of_British_Columbia_Logo.svg/1200px-University_of_British_Columbia_Logo.svg.png" },
+        { name: "University of Sydney", img: "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/University_of_Sydney_logo.svg/1200px-University_of_Sydney_logo.svg.png" },
+        { name: "University of Melbourne", img: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/University_of_Melbourne_logo.svg/1200px-University_of_Melbourne_logo.svg.png" },
+      ];
+
+      const marqueeItems = [...universities, ...universities];
+
+      return (
+        <section id="partner-universities" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Our Partner Universities</h2>
+            <div className="marquee">
+              <div className="marquee-content">
+                {marqueeItems.map((uni, index) => (
+                  <img key={index} src={uni.img} alt={uni.name} loading="lazy" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Impact Component
+    const Impact = () => {
+      const [studentsEnrolled, setStudentsEnrolled] = useState(0);
+      const [partnerUniversities, setPartnerUniversities] = useState(0);
+      const [scholarshipsAwarded, setScholarshipsAwarded] = useState(0);
+      const sectionRef = useRef(null);
+
+      const animateCounter = (setter, target, duration) => {
+        let start = 0;
+        const step = target / (duration / 10);
+        const interval = setInterval(() => {
+          start += step;
+          if (start >= target) {
+            start = target;
+            clearInterval(interval);
+          }
+          setter(Math.floor(start));
+        }, 10);
+      };
+
+      useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateCounter(setStudentsEnrolled, 5000, 2000);
+              animateCounter(setPartnerUniversities, 100, 2000);
+              animateCounter(setScholarshipsAwarded, 1000, 2000);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        if (sectionRef.current) {
+          observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+      }, []);
+
+      return (
+        <section id="impact" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Our Impact</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="counter">{studentsEnrolled}+</div>
+                <p className="text-lg font-semibold text-gray-600 dark:text-gray-300">Students Enrolled</p>
+              </div>
+              <div>
+                <div className="counter">{partnerUniversities}+</div>
+                <p className="text-lg font-semibold text-gray-600 dark:text-gray-300">Partner Universities</p>
+              </div>
+              <div>
+                <div className="counter">{scholarshipsAwarded}+</div>
+                <p className="text-lg font-semibold text-gray-600 dark:text-gray-300">Scholarships Awarded</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Testimonials Component
+    const Testimonials = () => {
+      const testimonials = [
+        { university: "University of Toronto - Computer Science", name: "Ayesha Khan", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330", quote: "GlobalEdu Connect helped me secure admission to my dream university in Canada. Their support was incredible!" },
+        { university: "University of Sydney - Mechanical Engineering", name: "Rahul Sharma", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e", quote: "The visa assistance and pre-departure orientation made my transition to Australia seamless. Highly recommend!" },
+        { university: "Technical University of Munich - Data Science", name: "Fatima Ali", img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df", quote: "Thanks to their scholarship guidance, I saved thousands on my tuition fees in Germany!" },
+      ];
+
+      const marqueeItems = [...testimonials, ...testimonials];
+
+      return (
+        <section id="testimonials" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">What Our Students Say</h2>
+            <div className="marquee">
+              <div className="testimonial-marquee flex space-x-8">
+                {marqueeItems.map((testimonial, index) => (
+                  <div key={index} className="testimonial-card flex-shrink-0 w-80">
+                    <div className="p-4">
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{testimonial.university}</p>
+                      <div className="flex items-center mb-4">
+                        <img src={testimonial.img} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                          <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-300">{testimonial.quote}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Latest Blogs Component
+    const LatestBlogs = () => {
+      const blogs = [
+        { title: "Why Study in Canada?", link: "/why-study-in-canada.html", img: "https://images.unsplash.com/photo-1511285560929-80b4564e6bfb", date: "April 15, 2025", desc: "Discover the benefits of studying in Canada, from world-class education to vibrant multicultural cities." },
+        { title: "Top 10 Tips for International Students", link: "/top-10-tips-for-international-students.html", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f", date: "April 10, 2025", desc: "Essential tips to help international students succeed in their study abroad journey." },
+      ];
+
+      return (
+        <section id="latest-blogs" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Latest Blogs</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogs.map((blog, index) => (
+                <div key={index} className="blog-card">
+                  <img src={blog.img} alt={blog.title} className="w-full h-48 object-cover rounded-t-lg" loading="lazy" />
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{blog.date}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{blog.desc}</p>
+                    <a href={blog.link} className="text-blue-600 dark:text-blue-400 hover:underline">Learn More</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Register Component
+    const Register = () => {
+      return (
+        <section id="register" className="py-20 relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Register for a Free Consultation Session</h2>
+            <div className="max-w-lg mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="reg-full-name" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Full Name</label>
+                  <input type="text" id="reg-full-name" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Full Name" />
+                </div>
+                <div>
+                  <label htmlFor="reg-email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
+                  <input type="email" id="reg-email" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Email" />
+                </div>
+                <div>
+                  <label htmlFor="reg-desired-country" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Desired Country</label>
+                  <select id="reg-desired-country" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500">
+                    <option value="UK">UK</option>
+                    <option value="USA">USA</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Italy">Italy</option>
+                    <option value="UAE">UAE</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="New Zealand">New Zealand</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="reg-program-type" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Program Type</label>
+                  <select id="reg-program-type" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500">
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                    <option value="phd">PhD</option>
+                    <option value="diploma">Diploma</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="reg-budget" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Budget ($)</label>
+                  <input type="number" id="reg-budget" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Budget" />
+                </div>
+                <div>
+                  <label htmlFor="reg-phone" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone Number</label>
+                  <input type="tel" id="reg-phone" className="mt-1 block w-full p-3 border rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:ring-2 focus:ring-blue-500" placeholder="Your Phone Number" />
+                </div>
+                <button className="w-full bg-gradient-to-r from-blue-800 to-gold-500 text-white p-3 rounded-lg btn-cta focus:ring-4 focus:ring-gold-400">Request Free Consultation</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Enhanced Footer Component
+    const Footer = () => {
+      return (
+        <footer className="bg-gray-900 text-white py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              <div>
+                <div className="flex items-center space-x-2 mb-4">
+                  <svg className="w-8 h-8 text-gold-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                  </svg>
+                  <h3 className="text-2xl font-bold font-montserrat">GlobalEdu Connect</h3>
+                </div>
+                <p>Your trusted partner for international education, connecting students and universities worldwide.</p>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+                <ul className="space-y-2">
+                  <li><a href="/" className="text-gray-400 hover:text-gold-400">Home</a></li>
+                  <li><a href="/destinations.html" className="text-gray-400 hover:text-gold-400">Destinations</a></li>
+                  <li><a href="/services.html" className="text-gray-400 hover:text-gold-400">Services</a></li>
+                  <li><a href="/about-us.html" className="text-gray-400 hover:text-gold-400">About Us</a></li>
+                  <li><a href="/blog.html" className="text-gray-400 hover:text-gold-400">Blog</a></li>
+                  <li><a href="/contact.html" className="text-gray-400 hover:text-gold-400">Contact</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-4">Destinations</h4>
+                <ul className="space-y-2">
+                  <li><a href="/uk.html" className="text-gray-400 hover:text-gold-400">Study in UK</a></li>
+                  <li><a href="/usa.html" className="text-gray-400 hover:text-gold-400">Study in USA</a></li>
+                  <li><a href="/australia.html" className="text-gray-400 hover:text-gold-400">Study in Australia</a></li>
+                  <li><a href="/canada.html" className="text-gray-400 hover:text-gold-400">Study in Canada</a></li>
+                  <li><a href="/germany.html" className="text-gray-400 hover:text-gold-400">Study in Germany</a></li>
+                  <li><a href="/italy.html" className="text-gray-400 hover:text-gold-400">Study in Italy</a></li>
+                  <li><a href="/uae.html" className="text-gray-400 hover:text-gold-400">Study in UAE</a></li>
+                  <li><a href="/malaysia.html" className="text-gray-400 hover:text-gold-400">Study in Malaysia</a></li>
+                  <li><a href="/new-zealand.html" className="text-gray-400 hover:text-gold-400">Study in New Zealand</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-4">Services</h4>
+                <ul className="space-y-2">
+                  <li><a href="/career-counseling.html" className="text-gray-400 hover:text-gold-400">Career Counseling</a></li>
+                  <li><a href="/university-selection.html" className="text-gray-400 hover:text-gold-400">University Selection</a></li>
+                  <li><a href="/profile-evaluation.html" className="text-gray-400 hover:text-gold-400">Profile Evaluation</a></li>
+                  <li><a href="/test-preparation.html" className="text-gray-400 hover:text-gold-400">Test Preparation</a></li>
+                  <li><a href="/application-support.html" className="text-gray-400 hover:text-gold-400">Application Support</a></li>
+                  <li><a href="/scholarship-consulting.html" className="text-gray-400 hover:text-gold-400">Scholarship Consulting</a></li>
+                  <li><a href="/visa-assistance.html" className="text-gray-400 hover:text-gold-400">Visa Assistance</a></li>
+                  <li><a href="/accommodation-support.html" className="text-gray-400 hover:text-gold-400">Accommodation Support</a></li>
+                  <li><a href="/pre-departure-orientation.html" className="text-gray-400 hover:text-gold-400">Pre-Departure Orientation</a></li>
+                  <li><a href="/post-arrival-support.html" className="text-gray-400 hover:text-gold-400">Post-Arrival Support</a></li>
+                  <li><a href="/job-search-guidance.html" className="text-gray-400 hover:text-gold-400">Job Search Guidance</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-4">Resources</h4>
+                <ul className="space-y-2">
+                  <li><a href="/scholarship-guide.html" className="text-gray-400 hover:text-gold-400">Scholarship Guide</a></li>
+                  <li><a href="/visa-checklist.html" className="text-gray-400 hover:text-gold-400">Visa Checklist</a></li>
+                  <li><a href="/blog.html" className="text-gray-400 hover:text-gold-400">Blog</a></li>
+                  <li><a href="/faqs.html" className="text-gray-400 hover:text-gold-400">FAQs</a></li>
+                  <li><a href="/why-study-in-canada.html" className="text-gray-400 hover:text-gold-400">Why Study in Canada?</a></li>
+                  <li><a href="/top-10-tips-for-international-students.html" className="text-gray-400 hover:text-gold-400">Top 10 Tips for Students</a></li>
+                </ul>
+                <h4 className="text-xl font-semibold mb-4 mt-6">Stay Connected</h4>
+                <div className="flex gap-4">
+                  <a href="https://facebook.com" className="text-gray-400 hover:text-gold-400" aria-label="Facebook"><i className="fab fa-facebook-f text-2xl"></i></a>
+                  <a href="https://linkedin.com" className="text-gray-400 hover:text-gold-400" aria-label="LinkedIn"><i className="fab fa-linkedin-in text-2xl"></i></a>
+                  <a href="https://instagram.com" className="text-gray-400 hover:text-gold-400" aria-label="Instagram"><i className="fab fa-instagram text-2xl"></i></a>
+                  <a href="https://twitter.com" className="text-gray-400 hover:text-gold-400" aria-label="Twitter"><i className="fab fa-twitter text-2xl"></i></a>
+                  <a href="https://whatsapp.com" className="text-gray-400 hover:text-gold-400" aria-label="WhatsApp"><i className="fab fa-whatsapp text-2xl"></i></a>
+                </div>
+              </div>
+            </div>
+            <p className="text-center text-sm mt-8">© 2025 GlobalEdu Connect. All rights reserved.</p>
+          </div>
+        </footer>
+      );
+    };
+
+    // Main App Component
+    const App = () => {
+      const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+      const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        document.body.classList.toggle('dark', newTheme === 'dark');
+      };
+
+      useEffect(() => {
+        document.body.classList.toggle('dark', theme === 'dark');
+
+        const cards = document.querySelectorAll('.destination-card, .about-card, .service-card, .testimonial-card, .blog-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-counter', 'visible');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => cardObserver.observe(card));
+
+        return () => cardObserver.disconnect();
+      }, [theme]);
+
+      return (
+        <div>
+          <Navbar />
+          <HeroSection />
+          <StartJourney />
+          <Destinations />
+          <AboutUs />
+          <Services />
+          <PartnerUniversities />
+          <Impact />
+          <Testimonials />
+          <LatestBlogs />
+          <Register />
+          <Footer />
+        </div>
+      );
+    };
+
+    // Render the App with Error Boundary
+    try {
+      ReactDOM.render(
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>,
+        document.getElementById('root'),
+        () => console.log('React app rendered successfully')
+      );
+    } catch (error) {
+      console.error('Failed to render React app:', error);
+      document.getElementById('root').innerHTML = `
+        <div class="error-message">
+          <h1>Failed to load the application</h1>
+          <p>${error.message}</p>
+          <p>Please check the console for more details.</p>
+        </div>
+      `;
     }
-
-    // Add visibility animation for cards
-    const cards = document.querySelectorAll('.destination-card, .about-card, .service-card, .testimonial-card, .blog-card');
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-counter', 'visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => cardObserver.observe(card));
   </script>
 </body>
 </html>
