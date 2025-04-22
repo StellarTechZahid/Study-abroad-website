@@ -580,37 +580,66 @@
           name: "United Kingdom", 
           shortName: "UK", 
           link: "/uk.html", 
-          img: "https://images.unsplash.com/photo-1505761671935-7f94a1a75228", 
+          img: "https://i.pinimg.com/236x/c6/ec/11/c6ec11c15abac1f256e6dd1a3c247b69.jpg", 
           desc: "The United Kingdom remains a premier destination for international students, hosting over 500,000+ students. Renowned for dynamic courses and integrated learning systems, the UK offers a rich educational experience."
         },
         { 
           name: "United States", 
           shortName: "USA", 
           link: "/usa.html", 
-          img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62d9e9", 
+          img: "https://media.istockphoto.com/id/1403089812/photo/biden-administration.webp?a=1&b=1&s=612x612&w=0&k=20&c=GBCBAj4T9xBk9PzClsCP0IQYYZ8K27_02vGt-_1BOnI=", 
           desc: "The United States is known for its world-renowned universities, top-ranking institutions like MIT and diverse culture. The country’s 4000 accredited centers, including Ivy League and Harvard, make it a prime choice."
         },
         { 
           name: "Australia", 
           shortName: "Australia", 
           link: "/australia.html", 
-          img: "https://images.unsplash.com/photo-1506973035872-a4ec6b683c98", 
+          img: "https://i.pinimg.com/474x/5a/6c/e5/5a6ce5907f0eeba60ba9d53f034c6662.jpg", 
           desc: "Australia, ranked as the 12th happiest country in the world (Prosperity Index), has 37 top universities and out of those 32, six of them are in the prestigious top 100. This adds to its popularity as a favored study-abroad destination."
         },
         { 
           name: "Canada", 
           shortName: "Canada", 
           link: "/canada.html", 
-          img: "https://images.unsplash.com/photo-1511285560929-80b4564e6bfb", 
+          img: "https://i.pinimg.com/236x/dd/53/1c/dd531cfb5a129a6d76332ae1bd7c7f9b.jpg", 
           desc: "Canada is another top choice for global students, offers excellent education, high standard living, and working opportunities. Notably, three Canadian cities—Toronto, Vancouver, and Montreal—feature in the top 20 Best Student Cities rankings by QS."
         },
         { 
-          name: "European Union", 
-          shortName: "EU", 
-          link: "/germany.html", 
-          img: "https://images.unsplash.com/photo-1516108317508-678dfdfaf3e0", 
-          desc: "The European Union is another great option for students looking to study abroad. With its easy mobility within EU countries, students can gain valuable international experience and diverse cultural exposure."
+          
+         name: "New Zealand",
+         shortName: "New Zealand",
+         link: "/newzealand.html",
+         img: "https://images.pexels.com/photos/31666548/pexels-photo-31666548/free-photo-of-american-flag-amongst-new-york-city-skyscrapers.jpeg?auto=compress&cs=tinysrgb&w=400",
+         desc: "New Zealand offers high-quality education with a strong emphasis on research and innovation. Its peaceful environment and stunning natural landscapes make it a perfect destination for international students."
         },
+        {
+         name: "Malaysia",
+         shortName: "Malaysia",
+         link: "/malaysia.html",
+         img: "https://i.pinimg.com/236x/06/86/e4/0686e4c091085ee3107ce0ea06ac4e12.jpg",
+         desc: "Malaysia is an emerging hub for higher education in Asia. With affordable tuition fees and a culturally rich environment, it's a great option for students seeking quality education at a lower cost."
+        },
+        {
+        name: "Italy",
+        shortName: "Italy",
+        link: "/italy.html",
+        img: "https://images.pexels.com/photos/11848948/pexels-photo-11848948.jpeg?auto=compress&cs=tinysrgb&w=400",
+        desc: "Italy is home to some of the world’s oldest and most prestigious universities. Students can enjoy a rich cultural experience, world-class architecture, and a vibrant student life."
+        },
+        {
+        name: "United Arab Emirates",
+        shortName: "UAE",
+        link: "/uae.html",
+        img: "https://i.pinimg.com/236x/20/f3/54/20f3544d6c9cf40ac42bcb0de1debc4d.jpg",
+        desc: "The UAE offers cutting-edge educational facilities and a dynamic multicultural society. With a booming economy and strategic location, it's a popular choice for students in business and tech fields."
+        },
+        {
+        name: "Germany",
+        shortName: "Germany",
+        link: "/germany.html",
+        img: "https://i.pinimg.com/236x/22/a2/58/22a258dbac82a3cbca8c22f5058f654c.jpg",
+        desc: "Germany is renowned for its tuition-free or low-cost education, especially in public universities. It's an excellent destination for students in engineering, science, and technology."
+        }
       ];
 
       return (
@@ -638,7 +667,7 @@
               ))}
             </div>
             <div className="text-center mt-12">
-              <a href="https://api.whatsapp.com/send?phone=1234567890&text=Hello%20GlobalEdu%20Connect,%20I%20want%20to%20speak%20with%20you!" target="_blank" className="inline-flex items-center gap-2 text-lg font-semibold text-white hover:text-blue-400">
+              <a href="https://api.whatsapp.com/send?phone=+9232841618740&text=Hello%20GlobalEdu%20Connect,%20I%20want%20to%20speak%20with%20you!" target="_blank" className="inline-flex items-center gap-2 text-lg font-semibold text-white hover:text-blue-400">
                 <i className="fab fa-whatsapp text-2xl text-green-500"></i>
                 Speak to Us
               </a>
@@ -721,33 +750,102 @@
       );
     };
 
-    // Partner Universities Component
     const PartnerUniversities = () => {
-      const universities = [
-        { name: "University of Toronto", img: "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/University_of_Toronto_Logo.svg/1200px-University_of_Toronto_Logo.svg.png" },
-        { name: "McGill University", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/McGill_University_logo.svg/1200px-McGill_University_logo.svg.png" },
-        { name: "University of British Columbia", img: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/University_of_British_Columbia_Logo.svg/1200px-University_of_British_Columbia_Logo.svg.png" },
-        { name: "University of Sydney", img: "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/University_of_Sydney_logo.svg/1200px-University_of_Sydney_logo.svg.png" },
-        { name: "University of Melbourne", img: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/University_of_Melbourne_logo.svg/1200px-University_of_Melbourne_logo.svg.png" },
-      ];
+  const universities = [
+    {
+      name: "Deakin University",
+      img: "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Deakin_University_Logo_2017.svg/250px-Deakin_University_Logo_2017.svg.png",
+      desc: "A leading Australian university known for its innovative teaching and research.",
+    },
+    {
+      name: "Royal Holloway, University of London",
+      img: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Royal_Holloway_coat_of_arms.png/150px-Royal_Holloway_coat_of_arms.png",
+      desc: "A prestigious university in London with a strong focus on research and teaching excellence.",
+    },
+    {
+      name: "Queen Mary University of London",
+      img: "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Arms_of_Queen_Mary_University_of_London.png/250px-Arms_of_Queen_Mary_University_of_London.png",
+      desc: "A world-class institution in the heart of London, offering a range of programs.",
+    },
+    {
+      name: "University of Birmingham",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Shield_of_the_University_of_Birmingham.svg/250px-Shield_of_the_University_of_Birmingham.svg.png",
+      desc: "A leading UK university offering high-quality education and research opportunities.",
+    },
+    {
+      name: "Curtin University",
+      img: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Curtin_University_Crest.jpg/250px-Curtin_University_Crest.jpg",
+      desc:  "A global university based in Perth, Australia, with a focus on industry connections and research.",
+    },
+    {
+      name: "BPP University",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI1Rt4Ngk4ZU9wrGDdfgksi1cUhXhnxziNxg&s",
+      desc: "A career-focused university based in the UK offering a range of business and law programs.",
+    },
+  ];
 
-      const marqueeItems = [...universities, ...universities];
+  const marqueeItems = [...universities, ...universities]; // repeat for infinite scroll
 
-      return (
-        <section id="partner-universities" className="py-20 relative">
-          <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">Our Partner Universities</h2>
-            <div className="marquee">
-              <div className="marquee-content">
-                {marqueeItems.map((uni, index) => (
-                  <img key={index} src={uni.img} alt={uni.name} loading="lazy" />
-                ))}
+  return (
+    <section
+      id="partner-universities"
+      className="py-20 overflow-hidden bg-cover bg-center relative"
+      style={{
+        backgroundImage: `url('https://i.pinimg.com/236x/9c/0c/45/9c0c45490424e9335169173a6956437a.jpg')`, // Replace with your actual image URL
+      }}
+    >
+      {/* Overlay to make the background image lighter */}
+      <div className="absolute inset-0 bg-gray-100 opacity-10"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-12 font-montserrat text-white">
+          Our Partner Universities
+        </h2>
+        <div className="relative">
+          <div className="marquee-track flex gap-8 animate-scroll">
+            {marqueeItems.map((uni, index) => (
+              <div
+                key={index}
+                className="min-w-[300px] max-w-[300px] bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
+              >
+                <img
+                  src={uni.img}
+                  alt={uni.name}
+                  className="mx-auto h-24 object-contain mb-4"
+                  loading="lazy"
+                />
+                <h3 className="text-lg font-semibold mb-2">{uni.name}</h3>
+                <p className="text-gray-600 text-sm">{uni.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-      );
-    };
+        </div>
+      </div>
+
+      {/* Inline Tailwind-style CSS for animation */}
+      <style jsx>{`
+        .animate-scroll {
+          animation: scroll-marquee 40s linear infinite;
+        }
+
+        @keyframes scroll-marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .marquee-track {
+          width: max-content;
+          background-color: transparent; /* Ensure no background is applied here */
+        }
+      `}</style>
+    </section>
+  );
+};
+
 
     // Impact Component
     const Impact = () => {
@@ -811,42 +909,113 @@
       );
     };
 
-    // Testimonials Component
     const Testimonials = () => {
-      const testimonials = [
-        { university: "University of Toronto - Computer Science", name: "Ayesha Khan", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330", quote: "GlobalEdu Connect helped me secure admission to my dream university in Canada. Their support was incredible!" },
-        { university: "University of Sydney - Mechanical Engineering", name: "Rahul Sharma", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e", quote: "The visa assistance and pre-departure orientation made my transition to Australia seamless. Highly recommend!" },
-        { university: "Technical University of Munich - Data Science", name: "Fatima Ali", img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df", quote: "Thanks to their scholarship guidance, I saved thousands on my tuition fees in Germany!" },
-      ];
+  const testimonials = [
+    {
+      universityLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/University_of_Waterloo_seal.svg/250px-University_of_Waterloo_seal.svg.png", 
+      universityLink: "https://uwaterloo.ca/", 
+      universityName: "University of Waterloo",
+      program: "Computer Science",
+      name: "Ayesha Khan",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      quote: "GlobalEdu Connect helped me secure admission to my dream university in Canada. Their support was incredible!",
+      rating: 4.7, // Rating out of 5
+    },
+    {
+      universityLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Shield_of_the_University_of_Nottingham.svg/250px-Shield_of_the_University_of_Nottingham.svg.png", 
+      universityLink: "https://www.nottingham.ac.uk/", 
+      universityName: "University of Nottingham",
+      program: "Electrical Engineering",
+      name: "Rahul Sharma",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      quote: "The visa assistance and pre-departure orientation made my transition to Australia seamless. Highly recommend!",
+      rating: 4.5, // Rating out of 5
+    },
+    {
+      universityLogo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Arms_of_Queen_Mary_University_of_London.png/250px-Arms_of_the_Queen_Mary_University_of_London.png", 
+      universityLink: "https://www.qmul.ac.uk/", 
+      universityName: "Queen Mary University of London",
+      program: "Business Administration",
+      name: "Argawan Ansari",
+      img: "https://plus.unsplash.com/premium_photo-1682091992663-2e4f4a5534ba?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJhbmdsYWRlc2glMjBzdHVkZW50fGVufDB8fDB8fHww",
+      quote: "Thanks to their scholarship guidance, I saved thousands on my tuition fees in Germany!",
+      rating: 4.9, // Rating out of 5
+    },
+    {
+      universityLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Shield_of_the_University_of_Bristol.svg/250px-Shield_of_the_University_of_Bristol.svg.png", 
+      universityLink: "https://www.bristol.ac.uk/", 
+      universityName: "University of Bristol",
+      program: "Mechanical Engineering",
+      name: "Elena Ardenald",
+      img: "https://images.unsplash.com/photo-1685476497626-a31ac1e465b5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a29yZWFuJTIwJTIwc3R1ZGVudHxlbnwwfHwwfHx8MA%3D%3D",
+      quote: "Thanks to their scholarship guidance, I saved thousands on my tuition fees in Germany!",
+      rating: 4.6, // Rating out of 5
+    }
+  ];
 
-      const marqueeItems = [...testimonials, ...testimonials];
+  return (
+    <section id="testimonials" className="py-20 bg-gray-50 relative">
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-4xl font-bold mb-12 text-center font-montserrat text-gray-800">What Our Students Say</h2>
+        <div className="overflow-x-auto">
+          <div className="flex gap-8 animate-marquee">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center min-w-[250px] max-w-[280px]">
+                <a href={testimonial.universityLink} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={testimonial.universityLogo}
+                    alt="University Logo"
+                    className="w-24 h-24 object-contain mb-4"
+                  />
+                </a>
+                <a href={testimonial.universityLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-xl mb-2">{testimonial.universityName}</a>
+                <p className="text-gray-600 text-sm mb-4">{testimonial.program}</p>
 
-      return (
-        <section id="testimonials" className="py-20 relative">
-          <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-4xl font-bold mb-12 text-center font-montserrat">What Our Students Say</h2>
-            <div className="marquee">
-              <div className="testimonial-marquee flex space-x-8">
-                {marqueeItems.map((testimonial, index) => (
-                  <div key={index} className="testimonial-card flex-shrink-0 w-80">
-                    <div className="p-4">
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{testimonial.university}</p>
-                      <div className="flex items-center mb-4">
-                        <img src={testimonial.img} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4 object-cover" />
-                        <div>
-                          <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                        </div>
-                      </div>
-                      <p className="text-gray-600 dark:text-gray-300">{testimonial.quote}</p>
-                    </div>
-                  </div>
-                ))}
+                {/* Rating Display */}
+                <div className="flex items-center mb-4">
+                  <span className="text-yellow-500">{'★'.repeat(testimonial.rating)}</span>
+                  <span className="text-gray-500 ml-2">{testimonial.rating}/5</span>
+                </div>
+
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.name}
+                  className="w-32 h-32 rounded-full object-cover mt-4"
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mt-4">{testimonial.name}</h3>
+                <p className="text-gray-700 italic mt-2 whitespace-normal">{testimonial.quote}</p>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-      );
-    };
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Add this CSS for the marquee effect
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    gap: 2rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .testimonial-card p {
+    word-wrap: break-word; /* Ensure text wraps in multiple lines */
+  }
+`;
+document.head.appendChild(style);
+
+
+
 
     // Latest Blogs Component
     const LatestBlogs = () => {
