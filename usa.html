@@ -196,15 +196,162 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="relative py-20 bg-gray-100 dark:bg-gray-900">
-    <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9" alt="USA Background" class="w-full h-full object-cover filter brightness-75">
-      <div class="absolute inset-0 bg-black opacity-50"></div>
-    </div>
-    <div class="relative container mx-auto px-4 text-center">
-      <h1 class="text-5xl font-extrabold mb-6 font-montserrat text-white">USA</h1>
-      <p class="text-xl mb-8 max-w-3xl mx-auto text-white">
-        The USA offers world-class education, diverse opportunities, and top universities that attract students globally. Study in the USA for a transformative experience.
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultra Hero Section</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .fade-up {
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .glow-border {
+      box-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 30px rgba(0,0,0,0.1);
+    }
+    .scroll-arrow {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+<!-- Hero Section -->
+<section class="relative h-screen w-full overflow-hidden">
+
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="absolute w-full h-full object-cover brightness-50">
+    <source src="https://v1.pinimg.com/videos/mc/720p/81/9e/79/819e79f9683724b7860e7e26c23efba5.mp4" type="video/mp4">
+    <!-- Fallback Image -->
+    <img src="https://i.pinimg.com/236x/40/89/16/408916b2ee7d4af0170b5dcab1d07884.jpg" alt="USA Background" class="w-full h-full object-cover brightness-75">
+  </video>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 fade-up">
+    <div class="backdrop-blur-lg bg-white/10 p-10 rounded-3xl shadow-xl glow-border max-w-3xl mx-auto">
+      <h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold font-montserrat mb-6 text-white"></h1>
+      <p class="text-lg md:text-xl text-white mb-6">
+        Experience world-class education and life-changing opportunities in the heart of innovation. The USA welcomes you!
       </p>
-    </div
+      <a href="#next-section" class="bg-white text-black px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-700 hover:text-white">
+        Get Started →
+      </a>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <div class="absolute bottom-10 text-white text-2xl scroll-arrow">
+      ↓
+    </div>
+  </div>
+</section>
+
+<!-- Next Section -->
+<section id="next-section" class="py-20 bg-white text-black dark:bg-gray-900 dark:text-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-4">Why the USA?</h2>
+    <p class="text-lg max-w-2xl mx-auto">
+      Gain access to top-ranked universities, revolutionary research, cultural diversity, and global career opportunities that shape your future.
+    </p>
+  </div>
+</section>
+
+<!-- Typewriter Script -->
+<script>
+  new TypeIt("#typewriter", {
+    speed: 100,
+    waitUntilVisible: true,
+    loop: true
+  })
+  .type("Study in USA ")
+  .pause(1000)
+  .delete()
+  .type("Transform Your Future ")
+  .pause(1000)
+  .delete()
+  .type("Explore Limitless Possibilities ")
+  .pause(1500)
+  .go();
+</script>
+
+</body>
+</html>
+
+
+
+<!-- Now you can start a new section after this -->
+
+  
+   <!-- Universities Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 text-center font-montserrat">Universities in the US</h2>
+      <!-- University List in a Box -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-semibold mb-4">Universities on this page</h3>
+        <div class="university-box space-y-2">
+          <a href="#auburn-university" class="block text-red-500 hover:text-gold-500">Auburn University</a>
+          <a href="#cleveland-state-university" class="block text-red-500 hover:text-gold-500">Cleveland State University</a>
+          <a href="#colorado-state-university" class="block text-red-500 hover:text-gold-500">Colorado State University</a>
+          <a href="#florida-international-university" class="block text-red-500 hover:text-gold-500">Florida International University</a>
+          <a href="#george-mason-university" class="block text-red-500 hover:text-gold-500">George Mason University</a>
+          <a href="#hult-international-business-school" class="block text-red-500 hover:text-gold-500">HULT International Business School</a>
+          <a href="#long-island-university" class="block text-red-500 hover:text-gold-500">Long Island University</a>
+          <a href="#louisiana-state-university" class="block text-red-500 hover:text-gold-500">Louisiana State University</a>
+          <a href="#northeastern-university" class="block text-red-500 hover:text-gold-500">Northeastern University</a>
+          <a href="#oregon-state-university" class="block text-red-500 hover:text-gold-500">Oregon State University</a>
+          <a href="#pace-university" class="block text-red-500 hover:text-gold-500">Pace University</a>
+          <a href="#saint-louis-university" class="block text-red-500 hover:text-gold-500">Saint Louis University</a>
+          <a href="#texas-am-university" class="block text-red-500 hover:text-gold-500">Texas A&M University</a>
+          <a href="#university-of-alabama-birmingham" class="block text-red-500 hover:text-gold-500">The University of Alabama at Birmingham</a>
+          <a href="#university-of-illinois-chicago" class="block text-red-500 hover:text-gold-500">The University of Illinois at Chicago</a>
+          <a href="#university-of-kansas" class="block text-red-500 hover:text-gold-500">The University of Kansas</a>
+          <a href="#university-of-utah" class="block text-red-500 hover:text-gold-500">The University of Utah</a>
+          <a href="#umass-boston" class="block text-red-500 hover:text-gold-500">UMass Boston</a>
+          <a href="#university-of-dayton" class="block text-red-500 hover:text-gold-500">University of Dayton</a>
+          <a href="#university-of-south-carolina" class="block text-red-500 hover:text-gold-500">University of South Carolina</a>
+          <a href="#university-of-south-florida" class="block text-red-500 hover:text-gold-500">University of South Florida</a>
+          <a href="#university-of-the-pacific" class="block text-red-500 hover:text-gold-500">University of the Pacific</a>
+          <a href="#washington-state-university" class="block text-red-500 hover:text-gold-500">Washington State University</a>
+          <a href="#west-virginia-university" class="block text-red-500 hover:text-gold-500">West Virginia University</a>
+          <a href="#wichita-state-university" class="block text-red-500 hover:text-gold-500">Wichita State University</a>
+          <a href="#arizona-state-university" class="block text-red-500 hover:text-gold-500">Arizona State University</a>
+          <a href="#depaul-university" class="block text-red-500 hover:text-gold-500">DePaul University</a>
+          <a href="#illinois-state-university" class="block text-red-500 hover:text-gold-500">Illinois State University</a>
+          <a href="#ohio-university" class="block text-red-500 hover:text-gold-500">Ohio University</a>
+          <a href="#san-jose-state-university" class="block text-red-500 hover:text-gold-500">San Jose State University</a>
+          <a href="#university-of-central-florida" class="block text-red-500 hover:text-gold-500">University of Central Florida</a>
+          <a href="#university-of-cincinnati" class="block text-red-500 hover:text-gold-500">University of Cincinnati</a>
+          <a href="#university-of-idaho" class="block text-red-500 hover:text-gold-500">University of Idaho</a>
+          <a href="#university-of-maryland-baltimore-county" class="block text-red-500 hover:text-gold-500">University of Maryland, Baltimore County</a>
+          <a href="#university-of-massachusetts-dartmouth" class="block text-red-500 hover:text-gold-500">University of Massachusetts Dartmouth</a>
+          <a href="#university-of-massachusetts-lowell" class="block text-red-500 hover:text-gold-500">University of Massachusetts Lowell</a>
+          <a href="#university-of-nevada-reno" class="block text-red-500 hover:text-gold-500">University of Nevada, Reno</a>
+          <a href="#university-of-new-hampshire" class="block text-red-500 hover:text-gold-500">University of New Hampshire</a>
+          <a href="#university-of-north-texas" class="block text-red-500 hover:text-gold-500">University of North Texas</a>
+          <a href="#university-of-rhode-island" class="block text-red-500 hover:text-gold-500">University of Rhode Island</a>
+          <a href="#university-of-toledo" class="block text-red-500 hover:text-gold-500">University of Toledo</a>
+        </div>
+      </div>
+
