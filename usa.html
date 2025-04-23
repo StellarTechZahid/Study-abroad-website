@@ -235,21 +235,20 @@
 </head>
 <body class="bg-black text-white">
 
-<!-- Hero Section -->
-<section class="relative h-screen w-full overflow-hidden">
+<!-- Full Page Video Background -->
+<video autoplay muted loop playsinline class="fixed top-0 left-0 w-full h-full object-cover z-0 brightness-50">
+  <source src="bg.mp4" type="video/mp4">
+  <!-- Fallback Image -->
+  <img src="https://i.pinimg.com/236x/40/89/16/408916b2ee7d4af0170b5dcab1d07884.jpg" alt="USA Background" class="w-full h-full object-cover brightness-75">
+</video>
 
-  <!-- Video Background -->
-  <video autoplay muted loop playsinline class="absolute w-full h-full object-cover brightness-50">
-    <source src="https://v1.pinimg.com/videos/mc/720p/81/9e/79/819e79f9683724b7860e7e26c23efba5.mp4" type="video/mp4">
-    <!-- Fallback Image -->
-    <img src="https://i.pinimg.com/236x/40/89/16/408916b2ee7d4af0170b5dcab1d07884.jpg" alt="USA Background" class="w-full h-full object-cover brightness-75">
-  </video>
+<!-- Gradient Overlay -->
+<div class="fixed inset-0 bg-gradient-to-b from-black/80 to-black/30 z-0"></div>
 
-  <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
-
-  <!-- Hero Content -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 fade-up">
+<!-- Page Content -->
+<div class="relative z-10">
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col items-center justify-center text-center px-4">
     <div class="backdrop-blur-lg bg-white/10 p-10 rounded-3xl shadow-xl glow-border max-w-3xl mx-auto">
       <h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold font-montserrat mb-6 text-white"></h1>
       <p class="text-lg md:text-xl text-white mb-6">
@@ -259,23 +258,19 @@
         Get Started →
       </a>
     </div>
+    <div class="absolute bottom-10 text-white text-2xl scroll-arrow">↓</div>
+  </section>
 
-    <!-- Scroll Down Arrow -->
-    <div class="absolute bottom-10 text-white text-2xl scroll-arrow">
-      ↓
+  <!-- Next Section -->
+  <section id="next-section" class="py-20 bg-white text-black dark:bg-gray-900 dark:text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4">Why the USA?</h2>
+      <p class="text-lg max-w-2xl mx-auto">
+        Gain access to top-ranked universities, revolutionary research, cultural diversity, and global career opportunities that shape your future.
+      </p>
     </div>
-  </div>
-</section>
-
-<!-- Next Section -->
-<section id="next-section" class="py-20 bg-white text-black dark:bg-gray-900 dark:text-white">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold mb-4">Why the USA?</h2>
-    <p class="text-lg max-w-2xl mx-auto">
-      Gain access to top-ranked universities, revolutionary research, cultural diversity, and global career opportunities that shape your future.
-    </p>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- Typewriter Script -->
 <script>
@@ -294,9 +289,6 @@
   .pause(1500)
   .go();
 </script>
-
-</body>
-</html>
 
 
 
