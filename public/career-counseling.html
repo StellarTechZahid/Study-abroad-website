@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Career Counseling & Academic Planning - Personalized sessions to explore your interests and goals with GlobalEdu Connect.">
-  <meta name="keywords" content="career counseling, academic planning, study abroad, global education">
+  <meta name="description" content="Scholarship & Financial Aid Consulting - Maximize funding opportunities with GlobalEdu Connect.">
+  <meta name="keywords" content="scholarship consulting, financial aid, study abroad, global education">
   <meta name="author" content="GlobalEdu Connect">
-  <title>Career Counseling & Academic Planning - GlobalEdu Connect</title>
+  <title>Scholarship & Financial Aid Consulting - GlobalEdu Connect</title>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
@@ -28,7 +28,7 @@
     .service-hero {
       position: relative;
       min-height: 60vh;
-      background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1585435557343-849d4b5b5b5b') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,21 +127,20 @@
       ];
 
       const services = [
-        { title: "Career Counseling & Academic Planning", link: "/public/career-counseling.html" },
-        { title: "Country and University Selection Services", link: "/public/country-university-selection.html" },
-        { title: "Student Profile Evaluation & Enhancement", link: "/public/profile-evaluation.html" },
-        { title: "Standardized Test Preparation Guidance", link: "/public/test-preparation.html" },
-        { title: "University Application & Documentation Support", link: "/public/application-support.html" },
-        { title: "Scholarship & Financial Aid Consulting", link: "/public/scholarship-consulting.html" },
-        { title: "Visa Application Assistance & Interview Prep", link: "/public/visa-assistance.html" },
-        { title: "Accommodation & Pre-Travel Support", link: "/public/accommodation-support.html" },
-        { title: "Pre-Departure Orientation for Students", link: "/public/pre-departure-orientation.html" },
-        { title: "Post-Arrival & Settling-in Support", link: "/public/post-arrival-support.html" },
-        { title: "Job Search & Permanent Residency Guidance", link: "/public/job-search-guidance.html" }
+        { title: "Career Counseling & Academic Planning", link: "career-counseling.html" },
+        { title: "Country and University Selection Services", link: "country-university-selection.html" },
+        { title: "Student Profile Evaluation & Enhancement", link: "profile-evaluation.html" },
+        { title: "Standardized Test Preparation Guidance", link: "test-preparation.html" },
+        { title: "University Application & Documentation Support", link: "application-support.html" },
+        { title: "Scholarship & Financial Aid Consulting", link: "scholarship-consulting.html" },
+        { title: "Visa Application Assistance & Interview Prep", link: "visa-assistance.html" },
+        { title: "Accommodation & Pre-Travel Support", link: "accommodation-support.html" },
+        { title: "Pre-Departure Orientation for Students", link: "pre-departure-orientation.html" },
+        { title: "Post-Arrival & Settling-in Support", link: "post-arrival-support.html" },
+        { title: "Job Search & Permanent Residency Guidance", link: "job-search-guidance.html" }
       ];
 
       React.useEffect(() => {
-        // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray('.service-card').forEach(el => {
           gsap.from(el, {
@@ -160,14 +159,13 @@
 
       return (
         <div>
-          {/* Navbar */}
           <nav className="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
             <div className="container mx-auto flex justify-between items-center px-4">
-              <a href="/public/index.html" className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
+              <a href="index.html" className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
               <div className="flex items-center space-x-6">
-                <a href="/public/index.html#home" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
+                <a href="index.html#home" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
                 <div className="relative dropdown">
-                  <a href="/public/index.html#destinations" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destinations</a>
+                  <a href="index.html#destinations" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destinations</a>
                   <div className="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
                     {destinations.map(dest => (
                       <a key={dest.name} href={`/${dest.name.toLowerCase()}.html`} className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">
@@ -177,7 +175,7 @@
                   </div>
                 </div>
                 <div className="relative dropdown">
-                  <a href="/public/index.html#services" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
+                  <a href="index.html#services" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
                   <div className="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-64">
                     {services.map(service => (
                       <a key={service.title} href={service.link} className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">
@@ -186,8 +184,8 @@
                     ))}
                   </div>
                 </div>
-                <a href="/public/index.html#blogs" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blogs</a>
-                <a href="/public/index.html#contact" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
+                <a href="index.html#blogs" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blogs</a>
+                <a href="index.html#contact" className="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
                 <button onClick={toggleTheme} className="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
                 </button>
@@ -195,64 +193,62 @@
             </div>
           </nav>
 
-          {/* Service Hero Section */}
           <section className="service-hero">
             <div className="service-hero-content fade-in">
-              <h1 className="text-5xl font-extrabold mb-4 font-montserrat">Career Counseling & Academic Planning</h1>
+              <h1 className="text-5xl font-extrabold mb-4 font-montserrat">Scholarship & Financial Aid Consulting</h1>
               <p className="text-xl max-w-2xl mx-auto">
-                Personalized sessions to explore your interests, align your academic choices with career goals, and set a clear path for your future.
+                Maximize your funding opportunities with expert guidance.
               </p>
             </div>
           </section>
 
-          {/* Service Details */}
           <section className="py-20 bg-gray-100 dark:bg-gray-800">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold mb-8 text-center font-montserrat">What We Offer</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className={`service-card ${theme}`}>
                   <div className="flex items-center mb-4">
-                    <i className="fas fa-user-tie feature-icon"></i>
-                    <h3 className="text-xl font-semibold">Personalized Sessions</h3>
+                    <i className="fas fa-money-bill-wave feature-icon"></i>
+                    <h3 className="text-xl font-semibold">Scholarship Search</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    One-on-one consultations to explore your interests, strengths, and aspirations.
+                    Identify scholarships that match your profile and goals.
                   </p>
                 </div>
                 <div className={`service-card ${theme}`}>
                   <div className="flex items-center mb-4">
-                    <i className="fas fa-lightbulb feature-icon"></i>
-                    <h3 className="text-xl font-semibold">Expert Advice</h3>
+                    <i className="fas fa-file-alt feature-icon"></i>
+                    <h3 className="text-xl font-semibold">Application Support</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Guidance from industry professionals to select the ideal career path.
+                    Assistance with scholarship and financial aid applications.
                   </p>
                 </div>
                 <div className={`service-card ${theme}`}>
                   <div className="flex items-center mb-4">
-                    <i className="fas fa-graduation-cap feature-icon"></i>
-                    <h3 className="text-xl font-semibold">Academic Field Identification</h3>
+                    <i className="fas fa-pen feature-icon"></i>
+                    <h3 className="text-xl font-semibold">Essay Guidance</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Identify suitable academic fields based on market trends and your goals.
+                    Help in writing compelling scholarship essays.
                   </p>
                 </div>
                 <div className={`service-card ${theme}`}>
                   <div className="flex items-center mb-4">
-                    <i className="fas fa-book-open feature-icon"></i>
-                    <h3 className="text-xl font-semibold">Course Structure Clarity</h3>
+                    <i className="fas fa-university feature-icon"></i>
+                    <h3 className="text-xl font-semibold">University Funding</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Understand course structures and their future scope for informed decisions.
+                    Explore university-specific grants and financial aid options.
                   </p>
                 </div>
                 <div className={`service-card ${theme}`}>
                   <div className="flex items-center mb-4">
-                    <i className="fas fa-road feature-icon"></i>
-                    <h3 className="text-xl font-semibold">Career Goal Alignment</h3>
+                    <i className="fas fa-hand-holding-usd feature-icon"></i>
+                    <h3 className="text-xl font-semibold">Budget Planning</h3>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Support in aligning your academic choices with your long-term career objectives.
+                    Guidance on managing education expenses with available funds.
                   </p>
                 </div>
               </div>
@@ -262,7 +258,6 @@
             </div>
           </section>
 
-          {/* Footer */}
           <footer className="bg-gray-900 text-white py-12">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -273,19 +268,19 @@
                 <div>
                   <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
                   <ul className="space-y-2">
-                    <li><a href="/public/index.html#home" className="text-gray-400 hover:text-gold-400">Home</a></li>
-                    <li><a href="/public/index.html#destinations" className="text-gray-400 hover:text-gold-400">Destinations</a></li>
-                    <li><a href="/public/index.html#services" className="text-gray-400 hover:text-gold-400">Services</a></li>
-                    <li><a href="/public/index.html#blogs" className="text-gray-400 hover:text-gold-400">Blogs</a></li>
-                    <li><a href="/public/index.html#contact" className="text-gray-400 hover:text-gold-400">Contact</a></li>
+                    <li><a href="index.html#home" className="text-gray-400 hover:text-gold-400">Home</a></li>
+                    <li><a href="index.html#destinations" className="text-gray-400 hover:text-gold-400">Destinations</a></li>
+                    <li><a href="index.html#services" className="text-gray-400 hover:text-gold-400">Services</a></li>
+                    <li><a href="index.html#blogs" className="text-gray-400 hover:text-gold-400">Blogs</a></li>
+                    <li><a href="index.html#contact" className="text-gray-400 hover:text-gold-400">Contact</a></li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-4">Resources</h4>
                   <ul className="space-y-2">
-                    <li><a href="/public/scholarship-consulting.html" className="text-gray-400 hover:text-gold-400">Scholarship Guide</a></li>
-                    <li><a href="/public/visa-assistance.html" className="text-gray-400 hover:text-gold-400">Visa Checklist</a></li>
-                    <li><a href="/public/Blog.html" className="text-gray-400 hover:text-gold-400">Blog</a></li>
+                    <li><a href="#" className="text-gray-400 hover:text-gold-400">Scholarship Guide</a></li>
+                    <li><a href="#" className="text-gray-400 hover:text-gold-400">Visa Checklist</a></li>
+                    <li><a href="#" className="text-gray-400 hover:text-gold-400">Blog</a></li>
                     <li><a href="#" className="text-gray-400 hover:text-gold-400">FAQs</a></li>
                   </ul>
                 </div>
