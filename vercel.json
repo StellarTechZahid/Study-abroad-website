@@ -1,8 +1,16 @@
 {
-    "rewrites": [
-      { "source": "/", "destination": "/index.html" },
-      { "source": "/about", "destination": "/about.html" },
-      { "source": "/contact", "destination": "/contact.html" }
+    "version": 3,
+    "build": {
+      "output": ".",
+      "command": "echo 'No build required'"
+    },
+    "routes": [
+      {
+        "handle": "filesystem"
+      },
+      {
+        "src": "/.*",
+        "dest": "/index.html"
+      }
     ]
   }
-  
