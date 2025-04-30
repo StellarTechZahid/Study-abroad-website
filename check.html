@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australian Universities</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .card .main-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .logo {
+      position: absolute;
+      top: 150px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .card-content {
+      padding: 20px;
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    p {
+      margin: 8px 0;
+      color: #555;
+      display: flex;
+      align-items: center;
+    }
+    i {
+      margin-right: 10px;
+    }
+    .apply-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      background-color: #ff8000;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .apply-btn:hover {
+      background-color: #ff6a00;
+    }
+    .text-orange-500 {
+      color: #ff8000;
+    }
+    .jump-nav {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .jump-nav h2 {
+      margin-top: 0;
+    }
+    .jump-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .jump-link {
+      color: #d4af37;
+      text-decoration: none;
+      padding: 5px;
+      transition: color 0.3s ease;
+    }
+    .jump-link:hover {
+      color: #c1b61b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Australian Universities</h1>
+    <div class="jump-nav">
+      <h2>Quick Navigation</h2>
+      <div class="jump-links">
+        <a href="#acu" class="jump-link">Australian Catholic University</a>
+        <a href="#anu" class="jump-link">The Australian National University</a>
+        <a href="#cdu" class="jump-link">Charles Darwin University</a>
+        <a href="#csu" class="jump-link">Charles Sturt University</a>
+        <a href="#cqu" class="jump-link">CQUniversity Australia</a>
+        <a href="#curtin" class="jump-link">Curtin University</a>
+        <a href="#deakin" class="jump-link">Deakin University</a>
+        <a href="#ecu" class="jump-link">Edith Cowan University</a>
+        <a href="#feduni" class="jump-link">Federation University Australia</a>
+        <a href="#flinders" class="jump-link">Flinders University</a>
+        <a href="#griffith" class="jump-link">Griffith University</a>
+        <a href="#jcu" class="jump-link">James Cook University</a>
+        <a href="#latrobe" class="jump-link">La Trobe University</a>
+        <a href="#macquarie" class="jump-link">Macquarie University</a>
+        <a href="#monash" class="jump-link">Monash University</a>
+        <a href="#murdoch" class="jump-link">Murdoch University</a>
+        <a href="#qut" class="jump-link">Queensland University of Technology</a>
+        <a href="#rmit" class="jump-link">RMIT University</a>
+        <a href="#scu" class="jump-link">Southern Cross University</a>
+        <a href="#swinburne" class="jump-link">Swinburne University of Technology</a>
+        <a href="#adelaide" class="jump-link">The University of Adelaide</a>
+        <a href="#uc" class="jump-link">University of Canberra</a>
+        <a href="#unimelb" class="jump-link">The University of Melbourne</a>
+        <a href="#une" class="jump-link">University of New England</a>
+        <a href="#unsw" class="jump-link">University of New South Wales</a>
+        <a href="#newcastle" class="jump-link">The University of Newcastle</a>
+        <a href="#uq" class="jump-link">The University of Queensland</a>
+        <a href="#unisa" class="jump-link">University of South Australia</a>
+        <a href="#usq" class="jump-link">University of Southern Queensland</a>
+        <a href="#usyd" class="jump-link">The University of Sydney</a>
+        <a href="#utas" class="jump-link">University of Tasmania</a>
+        <a href="#uts" class="jump-link">University of Technology Sydney</a>
+        <a href="#usc" class="jump-link">University of the Sunshine Coast</a>
+        <a href="#uwa" class="jump-link">The University of Western Australia</a>
+        <a href="#uow" class="jump-link">University of Wollongong</a>
+        <a href="#vu" class="jump-link">Victoria University</a>
+        <a href="#wsu" class="jump-link">Western Sydney University</a>
+        <a href="#avondale" class="jump-link">Avondale University</a>
+        <a href="#bond" class="jump-link">Bond University</a>
+        <a href="#excelsia" class="jump-link">Excelsia College</a>
+        <a href="#unda" class="jump-link">The University of Notre Dame Australia</a>
+        <a href="#ud" class="jump-link">University of Divinity</a>
+        <a href="#torrens" class="jump-link">Torrens University Australia</a>
+      </div>
+    </div>
+    
+    <div class="grid">
+      <!-- Australian Catholic University -->
+      <div id="acu" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Australian_Catholic_University_-_Signadou_Campus.jpg/250px-Australian_Catholic_University_-_Signadou_Campus.jpg" alt="Australian Catholic University Campus" class="main-img">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Australian_Catholic_University_Coat_of_Arms.png/250px-Australian_Catholic_University_Coat_of_Arms.png" alt="ACU Logo" class="logo">
+        <div class="card-content">
+          <h3>Australian Catholic University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #26 in Australia, #501-510 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$25,000-$33,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.acu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The Australian National University -->
+      <div id="anu" class="card">
+        <img src="/api/placeholder/400/320" alt="The Australian National University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="ANU Logo" class="logo">
+        <div class="card-content">
+          <h3>The Australian National University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #1 in Australia, #30 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$37,000-$48,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.anu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Charles Darwin University -->
+      <div id="cdu" class="card">
+        <img src="/api/placeholder/400/320" alt="Charles Darwin University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="CDU Logo" class="logo">
+        <div class="card-content">
+          <h3>Charles Darwin University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #29 in Australia, #601-650 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$24,000-$33,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.cdu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Charles Sturt University -->
+      <div id="csu" class="card">
+        <img src="/api/placeholder/400/320" alt="Charles Sturt University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="CSU Logo" class="logo">
+        <div class="card-content">
+          <h3>Charles Sturt University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #27 in Australia, #651-700 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$24,000-$36,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.csu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- CQUniversity Australia -->
+      <div id="cqu" class="card">
+        <img src="/api/placeholder/400/320" alt="CQUniversity Australia Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="CQU Logo" class="logo">
+        <div class="card-content">
+          <h3>CQUniversity Australia</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #24 in Australia, #591 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$25,000-$32,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: March, July & November</p>
+          <a href="https://www.cqu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Curtin University -->
+      <div id="curtin" class="card">
+        <img src="/api/placeholder/400/320" alt="Curtin University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Curtin Logo" class="logo">
+        <div class="card-content">
+          <h3>Curtin University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #11 in Australia, #190 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$30,000-$39,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.curtin.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Deakin University -->
+      <div id="deakin" class="card">
+        <img src="/api/placeholder/400/320" alt="Deakin University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Deakin Logo" class="logo">
+        <div class="card-content">
+          <h3>Deakin University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #15 in Australia, #266 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$30,000-$40,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: March, July & November</p>
+          <a href="https://www.deakin.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Edith Cowan University -->
+      <div id="ecu" class="card">
+        <img src="/api/placeholder/400/320" alt="Edith Cowan University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="ECU Logo" class="logo">
+        <div class="card-content">
+          <h3>Edith Cowan University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #23 in Australia, #501-510 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$27,000-$35,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.ecu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Federation University Australia -->
+      <div id="feduni" class="card">
+        <img src="/api/placeholder/400/320" alt="Federation University Australia Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="FedUni Logo" class="logo">
+        <div class="card-content">
+          <h3>Federation University Australia</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #35 in Australia, #751-800 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$23,000-$30,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.federation.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Flinders University -->
+      <div id="flinders" class="card">
+        <img src="/api/placeholder/400/320" alt="Flinders University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Flinders Logo" class="logo">
+        <div class="card-content">
+          <h3>Flinders University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #18 in Australia, #407 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$28,000-$38,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.flinders.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Griffith University -->
+      <div id="griffith" class="card">
+        <img src="/api/placeholder/400/320" alt="Griffith University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Griffith Logo" class="logo">
+        <div class="card-content">
+          <h3>Griffith University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #14 in Australia, #222 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$29,000-$38,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & October</p>
+          <a href="https://www.griffith.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- James Cook University -->
+      <div id="jcu" class="card">
+        <img src="/api/placeholder/400/320" alt="James Cook University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="JCU Logo" class="logo">
+        <div class="card-content">
+          <h3>James Cook University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #17 in Australia, #316 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$28,000-$37,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.jcu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- La Trobe University -->
+      <div id="latrobe" class="card">
+        <img src="/api/placeholder/400/320" alt="La Trobe University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="La Trobe Logo" class="logo">
+        <div class="card-content">
+          <h3>La Trobe University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #19 in Australia, #310 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$29,000-$40,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.latrobe.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Macquarie University -->
+      <div id="macquarie" class="card">
+        <img src="/api/placeholder/400/320" alt="Macquarie University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Macquarie Logo" class="logo">
+        <div class="card-content">
+          <h3>Macquarie University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #12 in Australia, #192 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$32,000-$45,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.mq.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Monash University -->
+      <div id="monash" class="card">
+        <img src="/api/placeholder/400/320" alt="Monash University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Monash Logo" class="logo">
+        <div class="card-content">
+          <h3>Monash University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #3 in Australia, #41 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$36,000-$46,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.monash.edu" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Murdoch University -->
+      <div id="murdoch" class="card">
+        <img src="/api/placeholder/400/320" alt="Murdoch University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Murdoch Logo" class="logo">
+        <div class="card-content">
+          <h3>Murdoch University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #28 in Australia, #601-650 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$27,000-$36,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.murdoch.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Queensland University of Technology -->
+      <div id="qut" class="card">
+        <img src="/api/placeholder/400/320" alt="Queensland University of Technology Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="QUT Logo" class="logo">
+        <div class="card-content">
+          <h3>Queensland University of Technology</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #9 in Australia, #162 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$32,000-$40,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.qut.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- RMIT University -->
+      <div id="rmit" class="card">
+        <img src="/api/placeholder/400/320" alt="RMIT University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="RMIT Logo" class="logo">
+        <div class="card-content">
+          <h3>RMIT University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #10 in Australia, #190 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$31,000-$41,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.rmit.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Southern Cross University -->
+      <div id="scu" class="card">
+        <img src="/api/placeholder/400/320" alt="Southern Cross University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="SCU Logo" class="logo">
+        <div class="card-content">
+          <h3>Southern Cross University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #36 in Australia, #801-1000 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$24,000-$32,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.scu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Swinburne University of Technology -->
+      <div id="swinburne" class="card">
+        <img src="/api/placeholder/400/320" alt="Swinburne University of Technology Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Swinburne Logo" class="logo">
+        <div class="card-content">
+          <h3>Swinburne University of Technology</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #22 in Australia, #296 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$30,000-$39,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & August</p>
+          <a href="https://www.swinburne.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Adelaide -->
+      <div id="adelaide" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Adelaide Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Adelaide Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Adelaide</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #8 in Australia, #109 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$34,000-$45,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.adelaide.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of Canberra -->
+      <div id="uc" class="card">
+        <img src="/api/placeholder/400/320" alt="University of Canberra Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UC Logo" class="logo">
+        <div class="card-content">
+          <h3>University of Canberra</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #25 in Australia, #511-520 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$26,000-$35,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.canberra.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Melbourne -->
+      <div id="unimelb" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Melbourne Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Melbourne Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Melbourne</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #2 in Australia, #14 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$38,000-$49,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.unimelb.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of New England -->
+      <div id="une" class="card">
+        <img src="/api/placeholder/400/320" alt="University of New England Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UNE Logo" class="logo">
+        <div class="card-content">
+          <h3>University of New England</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #32 in Australia, #701-750 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$25,000-$33,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, June & October</p>
+          <a href="https://www.une.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of New South Wales -->
+      <div id="unsw" class="card">
+        <img src="/api/placeholder/400/320" alt="University of New South Wales Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UNSW Logo" class="logo">
+        <div class="card-content">
+          <h3>University of New South Wales</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #4 in Australia, #19 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$37,000-$49,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & September</p>
+          <a href="https://www.unsw.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Newcastle -->
+      <div id="newcastle" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Newcastle Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Newcastle Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Newcastle</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #16 in Australia, #185 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$29,000-$39,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.newcastle.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Queensland -->
+      <div id="uq" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Queensland Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UQ Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Queensland</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #5 in Australia, #43 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$35,000-$46,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.uq.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of South Australia -->
+      <div id="unisa" class="card">
+        <img src="/api/placeholder/400/320" alt="University of South Australia Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UniSA Logo" class="logo">
+        <div class="card-content">
+          <h3>University of South Australia</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #13 in Australia, #196 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$29,000-$37,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.unisa.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of Southern Queensland -->
+      <div id="usq" class="card">
+        <img src="/api/placeholder/400/320" alt="University of Southern Queensland Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="USQ Logo" class="logo">
+        <div class="card-content">
+          <h3>University of Southern Queensland</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #31 in Australia, #651-700 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$24,000-$32,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.usq.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Sydney -->
+      <div id="usyd" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Sydney Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Sydney Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Sydney</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #6 in Australia, #19 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$38,000-$49,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.sydney.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of Tasmania -->
+      <div id="utas" class="card">
+        <img src="/api/placeholder/400/320" alt="University of Tasmania Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UTAS Logo" class="logo">
+        <div class="card-content">
+          <h3>University of Tasmania</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #20 in Australia, #321 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$28,000-$36,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.utas.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of Technology Sydney -->
+      <div id="uts" class="card">
+        <img src="/api/placeholder/400/320" alt="University of Technology Sydney Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UTS Logo" class="logo">
+        <div class="card-content">
+          <h3>University of Technology Sydney</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #7 in Australia, #90 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$33,000-$45,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.uts.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of the Sunshine Coast -->
+      <div id="usc" class="card">
+        <img src="/api/placeholder/400/320" alt="University of the Sunshine Coast Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="USC Logo" class="logo">
+        <div class="card-content">
+          <h3>University of the Sunshine Coast</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #34 in Australia, #751-800 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$24,000-$33,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.usc.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Western Australia -->
+      <div id="uwa" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Western Australia Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UWA Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Western Australia</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #7 in Australia, #90 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$34,000-$46,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.uwa.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of Wollongong -->
+      <div id="uow" class="card">
+        <img src="/api/placeholder/400/320" alt="University of Wollongong Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UOW Logo" class="logo">
+        <div class="card-content">
+          <h3>University of Wollongong</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #13 in Australia, #196 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$30,000-$39,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & October</p>
+          <a href="https://www.uow.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Victoria University -->
+      <div id="vu" class="card">
+        <img src="/api/placeholder/400/320" alt="Victoria University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="VU Logo" class="logo">
+        <div class="card-content">
+          <h3>Victoria University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #33 in Australia, #731 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$26,000-$34,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.vu.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Western Sydney University -->
+      <div id="wsu" class="card">
+        <img src="/api/placeholder/400/320" alt="Western Sydney University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="WSU Logo" class="logo">
+        <div class="card-content">
+          <h3>Western Sydney University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #21 in Australia, #280 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$28,000-$37,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, July & November</p>
+          <a href="https://www.westernsydney.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Avondale University -->
+      <div id="avondale" class="card">
+        <img src="/api/placeholder/400/320" alt="Avondale University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Avondale Logo" class="logo">
+        <div class="card-content">
+          <h3>Avondale University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Not Ranked Nationally, Not Ranked Worldwide</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$22,000-$30,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.avondale.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Bond University -->
+      <div id="bond" class="card">
+        <img src="/api/placeholder/400/320" alt="Bond University Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Bond Logo" class="logo">
+        <div class="card-content">
+          <h3>Bond University</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #20 in Australia, #461 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$33,000-$45,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: January, May & September</p>
+          <a href="https://bond.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Excelsia College -->
+      <div id="excelsia" class="card">
+        <img src="/api/placeholder/400/320" alt="Excelsia College Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Excelsia Logo" class="logo">
+        <div class="card-content">
+          <h3>Excelsia College</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Not Ranked Nationally, Not Ranked Worldwide</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$20,000-$26,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.excelsia.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- The University of Notre Dame Australia -->
+      <div id="unda" class="card">
+        <img src="/api/placeholder/400/320" alt="The University of Notre Dame Australia Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UNDA Logo" class="logo">
+        <div class="card-content">
+          <h3>The University of Notre Dame Australia</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: #30 in Australia, #651-700 Worldwide (QS 2024)</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$26,000-$35,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://www.notredame.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- University of Divinity -->
+      <div id="ud" class="card">
+        <img src="/api/placeholder/400/320" alt="University of Divinity Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="UD Logo" class="logo">
+        <div class="card-content">
+          <h3>University of Divinity</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Not Ranked Nationally, Not Ranked Worldwide</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$20,000-$28,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.5-7.0</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February & July</p>
+          <a href="https://divinity.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+      
+      <!-- Torrens University Australia -->
+      <div id="torrens" class="card">
+        <img src="/api/placeholder/400/320" alt="Torrens University Australia Campus" class="main-img">
+        <img src="/api/placeholder/400/320" alt="Torrens Logo" class="logo">
+        <div class="card-content">
+          <h3>Torrens University Australia</h3>
+          <p><i class="fas fa-trophy text-orange-500"></i> Ranking: Not Ranked Nationally, Not Ranked Worldwide</p>
+          <p><i class="fas fa-money-bill-wave text-orange-500"></i> Tuition Fee: AUD$24,000-$32,000/year</p>
+          <p><i class="fas fa-book text-orange-500"></i> IELTS Score: 6.0-6.5</p>
+          <p><i class="fas fa-users text-orange-500"></i> Intakes: February, June & October</p>
+          <a href="https://www.torrens.edu.au" target="_blank" class="apply-btn">Apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
