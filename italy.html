@@ -1,375 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Study in Italy with GlobalEdu Connect - Explore top universities, programs, and scholarships.">
-  <meta name="keywords" content="study in Italy, Italian universities, international education, scholarships">
-  <meta name="author" content="GlobalEdu Connect">
-  <title>Study in Italy - GlobalEdu Connect</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-  <style>
-    body {
-      transition: background-color 0.3s ease, color 0.3s ease;
-      overflow-x: hidden;
-      background: #f9fafb;
-    }
-    body.dark {
-      background: #111827;
-      color: #e5e7eb;
-    }
-    .btn-cta {
-      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      background: linear-gradient(45deg, #1e40af, #ffd700);
-      border: none;
-    }
-    .btn-cta:hover {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-      background: linear-gradient(45deg, #ffd700, #1e40af);
-    }
-    .card {
-      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
-      perspective: 1000px;
-      background: #1f2937;
-      color: white;
-      border-radius: 10px;
-      width: 300px;
-      height: 350px;
-      position: relative;
-      overflow: hidden;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    }
-    .card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-    .card .logo {
-      position: absolute;
-      top: 90px;
-      left: 20px;
-      background: white;
-      padding: 5px;
-      border-radius: 5px;
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
-    .card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-top: 40px;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .card p {
-      font-size: 0.875rem;
-      margin-bottom: 5px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .card .apply-btn {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: #ff4d4d;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 5px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: background 0.3s ease;
-    }
-    .card .apply-btn:hover {
-      background: #e60000;
-    }
-    .university-box {
-      background: #1f2937;
-      padding: 20px;
-      border-radius: 10px;
-      max-height: 300px;
-      overflow-y: auto;
-    }
-    .university-box a {
-      transition: color 0.3s ease;
-    }
-    .university-box a:hover {
-      color: #ffd700;
-    }
-    .country-card {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .country-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-    .country-card img {
-      transition: transform 0.4s ease;
-    }
-    .country-card:hover img {
-      transform: scale(1.1);
-    }
-    .country-card .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .country-card:hover .overlay {
-      opacity: 1;
-    }
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f3f4f6;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(45deg, #1e40af, #ffd700);
-      border-radius: 5px;
-    }
-    .dark ::-webkit-scrollbar-track {
-      background: #1f2937;
-    }
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-    .dropdown-menu {
-      display: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
-<body class="font-poppins">
-  <!-- Navbar -->
-  <nav class="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
-    <div class="container mx-auto flex justify-between items-center px-4">
-      <a href="/index.html" class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
-      <div class="flex items-center space-x-6">
-        <a href="/index.html#home" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
-        <div class="relative dropdown">
-          <a href="/index.html#destinations" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destination Country</a>
-          <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
-            <a href="/uk.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UK</a>
-            <a href="/canada.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Canada</a>
-            <a href="/australia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Australia</a>
-            <a href="/germany.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Germany</a>
-            <a href="/italy.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Italy</a>
-            <a href="/usa.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in USA</a>
-            <a href="/uae.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UAE</a>
-            <a href="/malaysia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Malaysia</a>
-            <a href="/newzealand.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in New Zealand</a>
-          </div>
-        </div>
-        <a href="/index.html#services" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
-        <a href="/index.html#blogs" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blogs</a>
-        <a href="/index.html#contact" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
-        <button id="darkModeToggle" class="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ultra Hero Section</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    .fade-up {
-      animation: fadeInUp 1s ease-out forwards;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Universities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
-    }
-    .glow-border {
-      box-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 30px rgba(0,0,0,0.1);
-    }
-    .scroll-arrow {
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
+
+      /* Hero Section Styles */
+      .fade-up {
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .glow-border {
+        box-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 30px rgba(0,0,0,0.1);
+      }
+
+      .scroll-arrow {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(10px); }
+      }
+
+      /* University Listings Styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .card .main-img {
+        width: 200%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .logo {
+        position: absolute;
+        top: 200px;
+        right: 20px;
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        background: white;
+        border-radius: 50%;
+        padding: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 1.2rem;
+      }
+
+      p {
+        margin: 8px 0;
+        color: #555;
+        display: flex;
+        align-items: center;
+      }
+
+      i {
+        margin-right: 10px;
+      }
+
+      .apply-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 20px;
+        background-color: #ff8000;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .apply-btn:hover {
+        background-color: #ff6a00;
+      }
+
+      .text-orange-500 {
+        color: #ff8000;
+      }
+
+      .jump-nav {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .jump-nav h2 {
+        margin-top: 0;
+      }
+
+      .jump-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .jump-link {
+        color: #d4af37;
+        text-decoration: none;
+        padding: 5px;
+        transition: color 0.3s ease;
+      }
+
+      .jump-link:hover {
+        color: #c1b61b;
+      }
+
+      /* Country Card Overlay */
+      .country-card {
+        position: relative;
+      }
+
+      .country-card .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .country-card:hover .overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
   </style>
 </head>
+
+<body class="font-poppins">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-900 shadow-2xl p-4 sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <a href="/index.html" class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-gold-500 font-montserrat">GlobalEdu Connect</a>
+        <div class="flex items-center space-x-6">
+          <a href="/index.html#home" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Home</a>
+          <div class="relative dropdown">
+            <a href="/index.html#destinations" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Destination Country</a>
+            <div class="dropdown-menu absolute bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-2 w-48">
+              <a href="/uk.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UK</a>
+              <a href="/canada.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Canada</a>
+              <a href="/australia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Australia</a>
+              <a href="/germany.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Germany</a>
+              <a href="/italy.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Italy</a>
+              <a href="/usa.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in USA</a>
+              <a href="/uae.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in UAE</a>
+              <a href="/malaysia.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in Malaysia</a>
+              <a href="/newzealand.html" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gold-500 hover:text-white">Study in New Zealand</a>
+            </div>
+          </div>
+          <a href="/index.html#services" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Services</a>
+          <a href="/index.html#blogs" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Blogs</a>
+          <a href="/index.html#contact" class="text-gray-700 dark:text-gray-200 hover:text-gold-500 dark:hover:text-gold-400 font-medium transition-colors">Contact</a>
+          <button id="darkModeToggle" class="p-2 rounded-lg bg-gradient-to-r from-blue-800 to-gold-500 text-white focus:ring-4 focus:ring-gold-400" aria-label="Toggle dark mode">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    
 <body class="bg-black text-white">
+  <!-- Full Page Video Background -->
+  <video autoplay loop playsinline class="fixed top-0 left-0 w-full h-full object-cover z-0 brightness-51000">
+    <source src="/public/bgitaly2.mp4" type="video/mp4">
+    <img src="https://i.pinimg.com/236x/40/89/16/408916b2ee7d4af0170b5dcab1d07884.jpg" alt="Australia Background" class="w-full h-full object-cover brightness-75">
+  </video>
 
-<!-- Full Page Video Background -->
-<video autoplay  loop playsinline class="fixed top-0 left-0 w-full h-full object-cover z-0 brightness-5100">
-  <source src="/public/bgitaly2.mp4" type="video/mp4">
-  <!-- Fallback Image -->
-  <img src="https://i.pinimg.com/236x/40/89/16/408916b2ee7d4af0170b5dcab1d07884.jpg" alt="USA Background" class="w-full h-full object-cover brightness-75">
-</video>
+  <!-- Gradient Overlay -->
+  <div class="fixed inset-0 bg-gradient-to-b from-black/80 to-black/30 z-0"></div>
 
-<!-- Gradient Overlay -->
-<div class="fixed inset-0 bg-gradient-to-b from-black/80 to-black/30 z-0"></div>
+  <!-- Page Content -->
+  <div class="relative z-10">
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col items-center justify-center text-center px-4">
+      <div class="backdrop-blur-lg bg-white/10 p-10 rounded-3xl shadow-xl glow-border max-w-3xl mx-auto fade-up">
+        <h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold mb-6 text-white"></h1>
+        <p class="text-lg md:text-xl text-white mb-6">
+          Experience world-class education and life-changing opportunities in the heart of innovation. Italy welcomes you!
+        </p>
+        <a href="#next-section" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-700 hover:border-blue-700">
+          Get Started →
+        </a>
+      </div>
+      <div class="absolute bottom-10 text-white text-2xl scroll-arrow">↓</div>
+    </section>
 
-<!-- Page Content -->
-<div class="relative z-10">
-  <!-- Hero Section -->
-  <section class="h-screen flex flex-col items-center justify-center text-center px-4">
-    <div class="backdrop-blur-lg bg-white/10 p-10 rounded-3xl shadow-xl glow-border max-w-3xl mx-auto">
-      <h1 id="typewriter" class="text-5xl md:text-6xl font-extrabold font-montserrat mb-6 text-white"></h1>
-      <p class="text-lg md:text-xl text-white mb-6">
-        Experience world-class education and life-changing opportunities in the heart of innovation. The ITALY welcomes you!
-      </p>
-      <a href="#next-section" class="bg-white text-black px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-700 hover:text-white">
-        Get Started →
-      </a>
-    </div>
-    <div class="absolute bottom-10 text-white text-2xl scroll-arrow">↓</div>
-  </section>
+    <!-- Spacing Section -->
+    <section id="next-section" class="py-20 bg-gray-900/80 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-4">Why Study in Italy?</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+          Gain access to top-ranked universities, revolutionary research, cultural diversity, and global career opportunities that shape your future.
+        </p>
+      </div>
+    </section>
 
-  <!-- Next Section -->
-  <section id="next-section" class="py-20 bg-white text-black dark:bg-gray-900 dark:text-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4">Why the ITALY?</h2>
-      <p class="text-lg max-w-2xl mx-auto">
-        Gain access to top-ranked universities, revolutionary research, cultural diversity, and global career opportunities that shape your future.
-      </p>
-    </div>
-  </section>
-</div>
-
-<!-- Typewriter Script -->
+    <!-- Typewriter Script -->
 <script>
-  new TypeIt("#typewriter", {
-    speed: 100,
-    waitUntilVisible: true,
-    loop: true
-  })
-  .type("Study in ITALY ")
-  .pause(1000)
-  .delete()
-  .type("Transform Your Future ")
-  .pause(1000)
-  .delete()
-  .type("Explore Limitless Possibilities ")
-  .pause(1500)
-  .go();
-</script>
+    new TypeIt("#typewriter", {
+      speed: 100,
+      waitUntilVisible: true,
+      loop: true
+    })
+    .type("Study in Italy ")
+    .pause(1000)
+    .delete()
+    .type("Transform Your Future ")
+    .pause(1000)
+    .delete()
+    .type("Explore Limitless Possibilities ")
+    .pause(1500)
+    .go();
+  </script>
 
-
-  <!-- Universities Section -->
-<section class="py-20 bg-gray-900 text-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-8 text-center font-montserrat">Universities in Italy</h2>
-    <!-- Universities Section -->
-<section class="py-20 bg-gray-900 text-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-8 text-center font-montserrat">Universities in Italy</h2>
-    <!-- University List in a Box -->
-    <div class="mb-12">
-      <h3 class="text-2xl font-semibold mb-4">Universities on this page</h3>
-      <div class="university-box space-y-2">
-        <a href="#university-of-bari-aldo-moro" class="block text-red-500 hover:text-gold-500">University of Bari Aldo Moro</a>
-        <a href="#university-of-basilicata" class="block text-red-500 hover:text-gold-500">University of Basilicata</a>
-        <a href="#university-of-bergamo" class="block text-red-500 hover:text-gold-500">University of Bergamo</a>
-        <a href="#university-of-bologna" class="block text-red-500 hover:text-gold-500">University of Bologna</a>
-        <a href="#university-of-brescia" class="block text-red-500 hover:text-gold-500">University of Brescia</a>
-        <a href="#university-of-cagliari" class="block text-red-500 hover:text-gold-500">University of Cagliari</a>
-        <a href="#university-of-calabria" class="block text-red-500 hover:text-gold-500">University of Calabria</a>
-        <a href="#university-of-camerino" class="block text-red-500 hover:text-gold-500">University of Camerino</a>
-        <a href="#university-of-cassino-and-southern-lazio" class="block text-red-500 hover:text-gold-500">University of Cassino and Southern Lazio</a>
-        <a href="#university-of-catania" class="block text-red-500 hover:text-gold-500">University of Catania</a>
-        <a href="#university-of-chieti-pescara-g-d-annunzio" class="block text-red-500 hover:text-gold-500">University of Chieti-Pescara (G. d'Annunzio)</a>
-        <a href="#university-of-ferrara" class="block text-red-500 hover:text-gold-500">University of Ferrara</a>
-        <a href="#university-of-florence" class="block text-red-500 hover:text-gold-500">University of Florence</a>
-        <a href="#university-of-foggia" class="block text-red-500 hover:text-gold-500">University of Foggia</a>
-        <a href="#university-of-genoa" class="block text-red-500 hover:text-gold-500">University of Genoa</a>
-        <a href="#university-of-insubria-varese-and-como" class="block text-red-500 hover:text-gold-500">University of Insubria (Varese and Como)</a>
-        <a href="#university-of-laquila" class="block text-red-500 hover:text-gold-500">University of L'Aquila</a>
-        <a href="#university-of-lecce-salento" class="block text-red-500 hover:text-gold-500">University of Lecce (Salento)</a>
-        <a href="#university-of-macerata" class="block text-red-500 hover:text-gold-500">University of Macerata</a>
-        <a href="#university-of-messina" class="block text-red-500 hover:text-gold-500">University of Messina</a>
-        <a href="#university-of-milan" class="block text-red-500 hover:text-gold-500">University of Milan</a>
-        <a href="#university-of-milan-bicocca" class="block text-red-500 hover:text-gold-500">University of Milan-Bicocca</a>
-        <a href="#university-of-modena-and-reggio-emilia" class="block text-red-500 hover:text-gold-500">University of Modena and Reggio Emilia</a>
-        <a href="#university-of-molise" class="block text-red-500 hover:text-gold-500">University of Molise</a>
-        <a href="#university-of-naples-federico-ii" class="block text-red-500 hover:text-gold-500">University of Naples Federico II</a>
-        <a href="#university-of-naples-lorientale" class="block text-red-500 hover:text-gold-500">University of Naples L'Orientale</a>
-        <a href="#university-of-naples-parthenope" class="block text-red-500 hover:text-gold-500">University of Naples Parthenope</a>
-        <a href="#university-of-padua" class="block text-red-500 hover:text-gold-500">University of Padua</a>
-        <a href="#university-of-palermo" class="block text-red-500 hover:text-gold-500">University of Palermo</a>
-        <a href="#university-of-parma" class="block text-red-500 hover:text-gold-500">University of Parma</a>
-        <a href="#university-of-pavia" class="block text-red-500 hover:text-gold-500">University of Pavia</a>
-        <a href="#university-of-perugia" class="block text-red-500 hover:text-gold-500">University of Perugia</a>
-        <a href="#university-of-pisa" class="block text-red-500 hover:text-gold-500">University of Pisa</a>
-        <a href="#university-of-reggio-calabria-mediterranean" class="block text-red-500 hover:text-gold-500">University of Reggio Calabria (Mediterranean)</a>
-        <a href="#university-of-rome-la-sapienza" class="block text-red-500 hover:text-gold-500">University of Rome La Sapienza</a>
-        <a href="#university-of-rome-tor-vergata" class="block text-red-500 hover:text-gold-500">University of Rome Tor Vergata</a>
-        <a href="#roma-tre-university" class="block text-red-500 hover:text-gold-500">Roma Tre University</a>
-        <a href="#university-of-salerno" class="block text-red-500 hover:text-gold-500">University of Salerno</a>
+    <!-- University Listings Section -->
+    <section id="university-listings" class="py-20 bg-gray-900/80 text-black">
+      <div class="container">
+        <h1 class="text-4xl font-bold text-center mb-8 text-white">Australian Universities</h1>
+        <div class="jump-nav">
+          <h2>Quick Navigation</h2>
+          <div class="jump-links">
+        <a href="#university-of-bari-aldo-moro" class="jump-link">University of Bari Aldo Moro</a>
+        <a href="#university-of-basilicata" class="jump-link">University of Basilicata</a>
+        <a href="#university-of-bergamo" class="jump-link">University of Bergamo</a>
+        <a href="#university-of-bologna" class="jump-link">University of Bologna</a>
+        <a href="#university-of-brescia" class="jump-link">University of Brescia</a>
+        <a href="#university-of-cagliari" class="jump-link">University of Cagliari</a>
+        <a href="#university-of-calabria" class="jump-link">University of Calabria</a>
+        <a href="#university-of-camerino" class="jump-link">University of Camerino</a>
+        <a href="#university-of-cassino-and-southern-lazio" class="jump-link">University of Cassino and Southern Lazio</a>
+        <a href="#university-of-catania" class="jump-link">University of Catania</a>
+        <a href="#university-of-chieti-pescara-g-d-annunzio" class="jump-link">University of Chieti-Pescara (G. d'Annunzio)</a>
+        <a href="#university-of-ferrara" class="jump-link">University of Ferrara</a>
+        <a href="#university-of-florence" class="jump-link">University of Florence</a>
+        <a href="#university-of-foggia" class="jump-link">University of Foggia</a>
+        <a href="#university-of-genoa" class="jump-link">University of Genoa</a>
+        <a href="#university-of-insubria-varese-and-como" class="jump-link">University of Insubria (Varese and Como)</a>
+        <a href="#university-of-laquila" class="jump-link">University of L'Aquila</a>
+        <a href="#university-of-lecce-salento" class="jump-link">University of Lecce (Salento)</a>
+        <a href="#university-of-macerata" class="jump-link">University of Macerata</a>
+        <a href="#university-of-messina" class="jump-link">University of Messina</a>
+        <a href="#university-of-milan" class="jump-link">University of Milan</a>
+        <a href="#university-of-milan-bicocca" class="jump-link">University of Milan-Bicocca</a>
+        <a href="#university-of-modena-and-reggio-emilia" class="jump-link">University of Modena and Reggio Emilia</a>
+        <a href="#university-of-molise" class="jump-link">University of Molise</a>
+        <a href="#university-of-naples-federico-ii" class="jump-link">University of Naples Federico II</a>
+        <a href="#university-of-naples-lorientale" class="jump-link">University of Naples L'Orientale</a>
+        <a href="#university-of-naples-parthenope" class="jump-link">University of Naples Parthenope</a>
+        <a href="#university-of-padua" class="jump-link">University of Padua</a>
+        <a href="#university-of-palermo" class="jump-link">University of Palermo</a>
+        <a href="#university-of-parma" class="jump-link">University of Parma</a>
+        <a href="#university-of-pavia" class="jump-link">University of Pavia</a>
+        <a href="#university-of-perugia" class="jump-link">University of Perugia</a>
+        <a href="#university-of-pisa" class="jump-link">University of Pisa</a>
+        <a href="#university-of-reggio-calabria-mediterranean" class="jump-link">University of Reggio Calabria (Mediterranean)</a>
+        <a href="#university-of-rome-la-sapienza" class="jump-link">University of Rome La Sapienza</a>
+        <a href="#university-of-rome-tor-vergata" class="jump-link">University of Rome Tor Vergata</a>
+        <a href="#roma-tre-university" class="jump-link">Roma Tre University</a>
+        <a href="#university-of-salerno" class="jump-link">University of Salerno</a>
         <a href="#university-of-sassari" class="block text-red-500 hover:text-gold-500">University of Sassari</a>
-        <a href="#university-of-siena" class="block text-red-500 hover:text-gold-500">University of Siena</a>
-        <a href="#university-of-teramo" class="block text-red-500 hover:text-gold-500">University of Teramo</a>
-        <a href="#university-of-trento" class="block text-red-500 hover:text-gold-500">University of Trento</a>
+        <a href="#university-of-siena" class="jump-link">University of Siena</a>
+        <a href="#university-of-teramo" class="jump-link">University of Teramo</a>
+        <a href="#university-of-trento" class="jump-link">University of Trento</a>
         <a href="#university-of-trieste" class="block text-red-500 hover:text-gold-500">University of Trieste</a>
-        <a href="#university-of-turin" class="block text-red-500 hover:text-gold-500">University of Turin</a>
-        <a href="#university-of-udine" class="block text-red-500 hover:text-gold-500">University of Udine</a>
-        <a href="#university-of-urbino" class="block text-red-500 hover:text-gold-500">University of Urbino</a>
-        <a href="#university-of-verona" class="block text-red-500 hover:text-gold-500">University of Verona</a>
-        <a href="#polytechnic-university-of-bari" class="block text-red-500 hover:text-gold-500">Polytechnic University of Bari</a>
-        <a href="#polytechnic-university-of-milan" class="block text-red-500 hover:text-gold-500">Polytechnic University of Milan</a>
-        <a href="#polytechnic-university-of-turin" class="block text-red-500 hover:text-gold-500">Polytechnic University of Turin</a>
-        <a href="#university-of-eastern-piedmont" class="block text-red-500 hover:text-gold-500">University of Eastern Piedmont</a>
-        <a href="#university-of-south-bohemia-italian-campus-collaboration" class="block text-red-500 hover:text-gold-500">University of South Bohemia (Italian campus collaboration)</a>
-        <a href="#santanna-school-of-advanced-studies-pisa" class="block text-red-500 hover:text-gold-500">Sant'Anna School of Advanced Studies (Pisa)</a>
-        <a href="#scuola-normale-superiore-pisa" class="block text-red-500 hover:text-gold-500">Scuola Normale Superiore (Pisa)</a>
-        <a href="#imt-school-for-advanced-studies-lucca" class="block text-red-500 hover:text-gold-500">IMT School for Advanced Studies Lucca</a>
-        <a href="#school-for-advanced-studies-iuss-pavia" class="block text-red-500 hover:text-gold-500">School for Advanced Studies IUSS Pavia</a>
-        <a href="#university-for-foreigners-of-perugia" class="block text-red-500 hover:text-gold-500">University for Foreigners of Perugia</a>
-        <a href="#university-for-foreigners-of-siena" class="block text-red-500 hover:text-gold-500">University for Foreigners of Siena</a>
-        <a href="#university-of-enna-kore" class="block text-red-500 hover:text-gold-500">University of Enna Kore</a>
-        <a href="#university-of-bolzano-free-university-of-bozen-bolzano" class="block text-red-500 hover:text-gold-500">University of Bolzano (Free University of Bozen-Bolzano)</a>
-        <a href="#university-of-trento" class="block text-red-500 hover:text-gold-500">University of Trento</a>
-        <a href="#university-of-sannio" class="block text-red-500 hover:text-gold-500">University of Sannio</a>
-        <a href="#university-of-campania-luigi-vanvitelli" class="block text-red-500 hover:text-gold-500">University of Campania Luigi Vanvitelli</a>
-        <a href="#university-of-tuscia" class="block text-red-500 hover:text-gold-500">University of Tuscia</a>
-        <a href="#university-of-basilicata" class="block text-red-500 hover:text-gold-500">University of Basilicata</a>
-        <a href="#university-of-piemonte-orientale" class="block text-red-500 hover:text-gold-500">University of Piemonte Orientale</a>
-        <a href="#parthenope-university-of-naples" class="block text-red-500 hover:text-gold-500">Parthenope University of Naples</a>
+        <a href="#university-of-turin" class="jump-link"></a>University of Turin</a>
+        <a href="#university-of-udine" class="jump-link">University of Udine</a>
+        <a href="#university-of-urbino" class="jump-link">University of Urbino</a>
+        <a href="#university-of-verona" class="jump-link">University of Verona</a>
+        <a href="#polytechnic-university-of-bari" class="jump-link">Polytechnic University of Bari</a>
+        <a href="#polytechnic-university-of-milan" class="jump-link">Polytechnic University of Milan</a>
+        <a href="#polytechnic-university-of-turin" class="jump-link">Polytechnic University of Turin</a>
+        <a href="#university-of-eastern-piedmont" class="jump-link">University of Eastern Piedmont</a>
+        <a href="#university-of-south-bohemia-italian-campus-collaboration" class="jump-link">University of South Bohemia (Italian campus collaboration)</a>
+        <a href="#santanna-school-of-advanced-studies-pisa" class="jump-link">Sant'Anna School of Advanced Studies (Pisa)</a>
+        <a href="#scuola-normale-superiore-pisa" class="jump-link">Scuola Normale Superiore (Pisa)</a>
+        <a href="#imt-school-for-advanced-studies-lucca" class="jump-link">IMT School for Advanced Studies Lucca</a>
+        <a href="#school-for-advanced-studies-iuss-pavia" class="jump-link">School for Advanced Studies IUSS Pavia</a>
+        <a href="#university-for-foreigners-of-perugia" class="jump-link">University for Foreigners of Perugia</a>
+        <a href="#university-for-foreigners-of-siena" class="jump-link">University for Foreigners of Siena</a>
+        <a href="#university-of-enna-kore" class="jump-link">University of Enna Kore</a>
+        <a href="#university-of-bolzano-free-university-of-bozen-bolzano" class="jump-link">University of Bolzano (Free University of Bozen-Bolzano)</a>
+        <a href="#university-of-trento" class="jump-link">University of Trento</a>
+        <a href="#university-of-sannio" class="jump-link">University of Sannio</a>
+        <a href="#university-of-campania-luigi-vanvitelli" class="jump-link">University of Campania Luigi Vanvitelli</a>
+        <a href="#university-of-tuscia" class="jump-link">University of Tuscia</a>
+        <a href="#university-of-basilicata" class="jump-link">University of Basilicata</a>
+        <a href="#university-of-piemonte-orientale" class="jump-link">University of Piemonte Orientale</a>
+        <a href="#parthenope-university-of-naples" class="jump-link">Parthenope University of Naples</a>
       </div>
     </div>
     <!-- University Cards -->
